@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import movieData from '../../movieData';
 import './App.css';
 
 class App extends Component {
@@ -11,6 +12,10 @@ class App extends Component {
     }
   }
 
+  componentDidMount() {
+    this.setState({movies: movieData})
+  }
+
   render() {
     return(
       <div>
@@ -21,7 +26,7 @@ class App extends Component {
 
         //Slider
           //worst movies
-          
+
         //Slider
           //other movies
       </div>
