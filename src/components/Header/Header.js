@@ -5,7 +5,7 @@ const Header = () => {
   return (
     <div>
       // logo
-      // title-rancid tomatillos
+      <h1>Rancid <br/> Tomatillos</h1>
       // Search 
     </div>
   )
