@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import movieData from '../../movieData';
+import Header from '../Header/Header'
 import './App.css';
 
 class App extends Component {
@@ -19,16 +20,18 @@ class App extends Component {
   render() {
     return(
       <div>
-        //Header
-          //Logo
+        <Header />
+        {  
+        //Logo
             //Image
-          //Search Bar
 
         //Slider
           //worst movies
 
         //Slider
           //other movies
+        }
+
       </div>
     )
   }
