@@ -1,13 +1,16 @@
 .Header {
   background-color: rgb(74, 88, 96);
-  height: 30vh;
+  height: 25vh;
   display: flex;
   justify-content: space-between;
+  align-items: flex-end;
 }
 
 .logo {
   display: flex;
   align-items: center;
+  margin: 10px;
+  font-family: "Oswald", sans-serif;
 }
 
 .tomatillo {
