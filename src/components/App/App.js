@@ -17,6 +17,10 @@ class App extends Component {
     this.setState({movies: movieData})
   }
 
+  selectMovie = (id) => {
+    this.setState({ selectedMovie: id })
+  }
+
   render() {
     return(
       <div>
