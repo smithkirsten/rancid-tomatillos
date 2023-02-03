@@ -1,4 +1,4 @@
-@import "../../index.scss"; //look into why import works but use doesn't
+@use "../../abstracts/index.scss" as *;
 
 .App {
   height: 100vh;
