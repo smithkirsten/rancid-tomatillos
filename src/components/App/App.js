@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import movieData from '../../movieData';
 import Header from '../Header/Header'
 import Slider from '../Slider/Slider'
 import './App.css';
