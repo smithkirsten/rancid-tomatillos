@@ -23,7 +23,7 @@ class App extends Component {
 
   render() {
     return(
-      <div>
+      <main className='App'>
         <Header />
         {  
         //Logo
@@ -36,7 +36,7 @@ class App extends Component {
           //other movies
         }
 
-      </div>
+      </main>
     )
   }
 
