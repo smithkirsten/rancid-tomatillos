@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import movieData from '../../movieData';
 import Header from '../Header/Header'
+import Slider from '../Slider/Slider'
 import './App.css';
 
 class App extends Component {
@@ -14,7 +15,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    this.setState({movies: movieData})
+    this.setState({ movies: movieData.movies })
   }
 
   selectMovie = (id) => {
@@ -22,20 +23,29 @@ class App extends Component {
   }
 
   findWorstMovies = () => {
-    //this currently returns any movie rated below a 4 and sorts them in order of rating
-    return this.state.movies.reduce((worst, movie) => movie.average_rating < 4 && worst.push(movie),[]).sort((a, b) => a.average_rating - b.average_rating)
+    return this.state.movies
+    .sort((a, b) => a.average_rating - b.average_rating)
+    .slice(0, 10)
   }
 
   render() {
-    return(
-      <main className='App'>
-        <Header />
-        <section className="movies-display">
-          <Slider movies={} selectMovie={this.selectMovie}/>
-          <Slider movies={} selectMovie={this.selectMovie}/>
-        </section>
-      </main>
-    )
+    if(this.state.movies.length < 1) {
+      return (<p>loading...</p>)
+    } else if (this.state.error) {
+      return (<p>error</p>)
+    } else if (this.state.selectedMovie) {
+      return (<p>you picked a movie!</p>)
+    } else {
+      return(
+        <main className='App'>
+          <Header />
+          <section className="movies-display">
+            <Slider movies={this.findWorstMovies()} selectMovie={this.selectMovie}/>
+            <Slider movies={this.state.movies} selectMovie={this.selectMovie}/>
+          </section>
+        </main>
+      )
+    }
   }
 
 }
