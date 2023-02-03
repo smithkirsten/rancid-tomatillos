@@ -7,7 +7,7 @@ import tomatillo from "../../assets/cream-toma.png"
 const Header = () => {
   return (
     <nav className="Header">
-      <div>
+      <div className="logo">
         <img src={tomatillo} className="tomatillo"/>
         <h1>Rancid <br/> Tomatillos</h1>
       </div>

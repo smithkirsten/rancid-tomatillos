@@ -2,7 +2,14 @@
 
 .Header {
   background-color: $darkGrey;
-  height: 40vh;
+  height: 30vh;
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
 }
 
 .tomatillo {
