@@ -1,7 +1,7 @@
-@import "../../index.scss";
+@use "../../index.scss";
 
 .Header {
-  background-color: $darkGrey;
+  background-color: index.$darkGrey;
   height: 25vh;
   display: flex;
   justify-content: space-between;
