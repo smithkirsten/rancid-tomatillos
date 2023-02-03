@@ -7,8 +7,10 @@ import tomatillo from "../../assets/cream-toma.png"
 const Header = () => {
   return (
     <nav className="Header">
-      <img src={tomatillo}/>
-      <h1>Rancid <br/> Tomatillos</h1>
+      <div>
+        <img src={tomatillo} className="tomatillo"/>
+        <h1>Rancid <br/> Tomatillos</h1>
+      </div>
       <Search />
     </nav>
   )

@@ -1,5 +1,10 @@
-@use "../../index.scss";
+@import "../../index.scss";
 
 .Header {
-  color: $cream;
+  background-color: $darkGrey;
+  height: 40vh;
+}
+
+.tomatillo {
+  height: 20vh;
 }
