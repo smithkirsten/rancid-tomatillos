@@ -19,9 +19,10 @@ class App extends Component {
     try {
       const res = await fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
 		  const data = await res.json() 
-      this.setState({movies: data})
+      this.setState({movies: data.movies})
     } catch(err) {
       console.log(err)
+      this.setState({ error: err })
     }
 
   }
