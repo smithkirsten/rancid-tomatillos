@@ -1,11 +1,13 @@
-@use "../../index.scss"; //look into why import works but use doesn't
+
+@use "../../abstracts/index.scss" as *;
+
 
 .App {
   height: 100vh;
   width: 100vw;
   margin: 0;
-  background-color: index.$black;
-  color: index.$cream;
-  font-family: 'Source Sans Pro', sans-serif;
+  background-color: $black;
+  color: $cream;
+  font-family: $bodyFont;
 }
 

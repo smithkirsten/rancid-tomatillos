@@ -1,4 +1,6 @@
-@use "../../index.scss";
+
+@use "../../abstracts/index.scss" as *;
+
 
 .Header {
   background-color: index.$darkGrey;
@@ -12,7 +14,7 @@
   display: flex;
   align-items: center;
   margin: 10px;
-  font-family: 'Oswald', sans-serif;
+  font-family: $headerFont;
 }
 
 .tomatillo {

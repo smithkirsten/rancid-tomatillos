@@ -14,8 +14,16 @@ class App extends Component {
     }
   }
 
-  componentDidMount() {
-    this.setState({ movies: movieData.movies })
+
+  async componentDidMount() {
+    try {
+      const res = await fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
+		  const data = await res.json() 
+      this.setState({movies: data})
+    } catch(err) {
+      console.log(err)
+    }
+
   }
 
   selectMovie = (id) => {
