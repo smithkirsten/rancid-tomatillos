@@ -1,1 +1,15 @@
-/*# sourceMappingURL=Slider.css.map */
+
+Swiper {
+  height: 30vh;
+  width: 90vw;
+}
+
+.slide {
+  height: 28vh;
+}
+
+img {
+  height: 28vh;
+  width: 12vw;
+}/*# sourceMappingURL=Slider.css.map */
+
