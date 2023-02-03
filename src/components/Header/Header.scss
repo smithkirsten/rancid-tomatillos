@@ -1,5 +1,7 @@
+@use "../../index.scss";
+
 .Header {
-  background-color: rgb(74, 88, 96);
+  background-color: index.$darkGrey;
   height: 25vh;
   display: flex;
   justify-content: space-between;
@@ -10,9 +12,9 @@
   display: flex;
   align-items: center;
   margin: 10px;
-  font-family: "Oswald", sans-serif;
+  font-family: 'Oswald', sans-serif;
 }
 
 .tomatillo {
   height: 20vh;
-}/*# sourceMappingURL=Header.css.map */
+}
