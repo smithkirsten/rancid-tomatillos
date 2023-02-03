@@ -28,26 +28,31 @@ class App extends Component {
     .slice(0, 10)
   }
 
-  render() {
-    if(this.state.movies.length < 1) {
-      return (<p>loading...</p>)
-    } else if (this.state.error) {
+  determineRender = ({ error, movies, selectedMovie }) => {
+    if(error) {
       return (<p>error</p>)
-    } else if (this.state.selectedMovie) {
+    } 
+    if(selectedMovie) {
       return (<p>you picked a movie!</p>)
+    }
+    if(movies.length < 1) {
+      return (<p>loading...</p>)
     } else {
       return(
         <main className='App'>
           <Header />
           <section className="movies-display">
-            <Slider movies={this.findWorstMovies()} selectMovie={this.selectMovie}/>
-            <Slider movies={this.state.movies} selectMovie={this.selectMovie}/>
+            <Slider movies={this.findWorstMovies()} scroll={false} selectMovie={this.selectMovie}/>
+            <Slider movies={this.state.movies} scroll={true} selectMovie={this.selectMovie}/>
           </section>
         </main>
       )
     }
   }
 
+  render() {
+    return this.determineRender(this.state)
+  }
 }
 
 export default App;
