@@ -3,6 +3,7 @@ import Header from '../Header/Header'
 import Slider from '../Slider/Slider'
 import MovieDetails from '../MovieDetails/MovieDetails'
 import './App.css';
+import apiCalls from '../../apiCalls'
 
 class App extends Component {
   constructor() {
@@ -14,17 +15,12 @@ class App extends Component {
     }
   }
 
-
-  async componentDidMount() {
-    try {
-      const res = await fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
-		  const data = await res.json() 
-      this.setState({movies: data.movies})
-    } catch(err) {
-      console.log(err)
-      this.setState({ error: err })
-    }
-
+  componentDidMount = async() => {
+    const data = await apiCalls.getMovies('movies')
+    console.log(data)
+    data.movies ? 
+      this.setState({ movies: data.movies }) :
+      this.setState({ error: data.error })
   }
 
   selectMovie = (id) => {
@@ -65,7 +61,6 @@ class App extends Component {
       )
     }
   }
-
   render() {
     return this.determineRender(this.state)
   }
