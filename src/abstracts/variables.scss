@@ -5,3 +5,11 @@ $black: rgb(35, 34, 37);
 
 $headerFont: 'Oswald', sans-serif;
 $bodyFont: 'Source Sans Pro', sans-serif;
+
+@mixin creamBackground {
+  color: $darkGrey;
+  background-color: $cream;
+  margin: 15px;
+  border-radius: 3px; 
+  padding: 5px;
+}

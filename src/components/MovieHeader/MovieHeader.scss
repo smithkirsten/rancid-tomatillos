@@ -1,1 +1,47 @@
 @use "../../abstracts/index.scss" as *;
+
+.movie-header {
+  height: 50vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-family: $bodyFont;
+}
+
+.header-details {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.deets {
+  @include creamBackground;
+}
+
+.movie-title {
+
+}
+
+.movie-rating {
+
+}
+
+.movie-date {
+
+}
+
+.revenue-back-button-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.back-to-main-button {
+  @include creamBackground;
+  text-align: center;
+}
+
+.revenue-details {
+  @include creamBackground;
+}

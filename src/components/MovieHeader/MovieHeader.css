@@ -1,1 +1,45 @@
-/*# sourceMappingURL=MovieHeader.css.map */
+.movie-header {
+  height: 50vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+.header-details {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.deets {
+  color: rgb(74, 88, 96);
+  background-color: rgb(255, 255, 240);
+  margin: 15px;
+  border-radius: 3px;
+  padding: 5px;
+}
+
+.revenue-back-button-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.back-to-main-button {
+  color: rgb(74, 88, 96);
+  background-color: rgb(255, 255, 240);
+  margin: 15px;
+  border-radius: 3px;
+  padding: 5px;
+  text-align: center;
+}
+
+.revenue-details {
+  color: rgb(74, 88, 96);
+  background-color: rgb(255, 255, 240);
+  margin: 15px;
+  border-radius: 3px;
+  padding: 5px;
+}/*# sourceMappingURL=MovieHeader.css.map */

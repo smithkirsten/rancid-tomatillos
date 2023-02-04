@@ -1,4 +1,14 @@
 input {
-  height: 16px;
-  margin: 3px;
+  height: 4vh;
+  width: 100%;
+  border: none;
+  border-radius: 3px;
+}
+
+.search-container {
+  margin: 20px;
+}
+
+label {
+  display: none;
 }
