@@ -1,6 +1,12 @@
+@use "../../abstracts/index.scss" as *;
+
 Swiper {
   height: 30vh;
   width: 90vw;
+}
+
+.swiper-wrapper {
+  margin: 20px;
 }
 
 .slide {
@@ -10,4 +16,8 @@ Swiper {
 img {
   height: 28vh;
   width: 12vw;
+}
+
+:root {
+  --swiper-navigation-color: $cream;
 }

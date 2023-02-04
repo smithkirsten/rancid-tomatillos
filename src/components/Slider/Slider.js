@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
-// import 'swiper/css/bundle'
 import './Slider.css'
 import 'swiper/scss'
 import 'swiper/scss/navigation'
@@ -20,11 +19,13 @@ const buildABear = ({ movies, selectMovie }) => {
 
 const Slider = (props) => {
   const slides = buildABear(props)
-  const scroll = props.scroll ? { delay: 900, disableOnInteraction: true, } : false //add autoplay if it is for all movies so they will rotate
-  const perView = props.scroll ? 10 : 5
+  const scroll = props.scroll ? { delay: 1200, disableOnInteraction: true, } : false //add autoplay if it is for all movies so they will rotate
+  const perView = props.scroll ? 7 : 7
   return (
+    <div>
+      <h2 className='section-title'>{props.sectionTitle}</h2>
       <Swiper
-        spaceBetween={60}
+        spaceBetween={50}
         modules={[Navigation, Autoplay]}
         slidesPerView={perView}
         navigation={true}
@@ -32,10 +33,10 @@ const Slider = (props) => {
         autoplay={scroll}
         onSlideChange={() => console.log('slide change')}
         onSwiper={(swiper) => console.log(swiper)}
-      >
+        >
         {slides}
       </Swiper>
-
+    </div>
   )
 }
 
