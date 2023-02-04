@@ -26,9 +26,17 @@ class MovieDetails extends Component {
     }
   }
   //props are: movie id and backToMain function
-  componentDidMount(props) {
+  async componentDidMount(props) {
     console.log('movie details did mount', this.props.movieId )
     //GET Movie
+    try {
+      const res = await fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${this.props.movieId}`)
+      const data = await res.json() 
+      this.setState({movie: data.movie})
+    } catch(err) {
+      console.log(err)
+      this.setState({ error: err })
+    }
     //GET Videos
 
     //GET for individual movie details and videos
