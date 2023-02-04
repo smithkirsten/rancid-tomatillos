@@ -19,18 +19,16 @@ class MovieDetails extends Component {
     //GET for individual movie details and videos
   }
 
+
   render(props) {
     return (
       <main className="App">
-        <MovieHeader />
-        <MovieMain />
+        <MovieHeader backToMain={this.props.backToMain} movie={this.props.movie}/>
+        <MovieMain move={this.props.movie}/>
       </main>
     )
 
   }
 }
-
-{/* <MovieHeader goBack={this.backToMain} movie={selectedMovie}/> 
-<MovieMain movie={selectedMovie}/> */}
 
 export default MovieDetails
