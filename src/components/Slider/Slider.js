@@ -1,20 +1,48 @@
 import React from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
+// import 'swiper/scss/bundle' <- not working
 import './Slider.css'
 import 'swiper/scss'
 import 'swiper/scss/navigation'
 import 'swiper/scss/autoplay'
 import { Autoplay, Navigation, A11y, Keyboard } from 'swiper'
 
+const buildVideoSlides = (videos) => {
 
-const buildABear = ({ movies, selectMovie }) => {
-  console.log('# of slides: ', movies.length)
+}
+
+const buildDummySlides = () => {
+  let slides = []
+  for (let i = 0; i < 50; i++) {
+    slides.push((
+      <SwiperSlide className="slide" key={Date.now()}><div className="loading-card"></div></SwiperSlide>
+    ))
+  }
+  return slides
+}
+
+const buildMovieSlides = (movies, selectMovie) => {
   return movies.map(movie => {
     const aria = `Click to view details for ${movie.title}`
     return (
-    <SwiperSlide className="slide" key={movie.id}><button onClick={() => selectMovie(movie.id)} id={movie.id}><img aria-label={aria} src={movie.poster_path} alt={movie.title} /></button></SwiperSlide>
+        <SwiperSlide className="slide" key={movie.id}><button onClick={() => selectMovie(movie.id)} id={movie.id}><img aria-label={aria} src={movie.poster_path} alt={movie.title} /></button></SwiperSlide>
     )
-  })  
+  }) 
+}
+
+const buildABear = ({ movies, selectMovie, videos }) => {
+  if(videos) {
+    return buildVideoSlides(videos)
+  }
+
+  if(movies.length > 0) {
+    return buildMovieSlides(movies, selectMovie)
+    
+  } else {
+    return buildDummySlides()
+    //style loading-card and set scroll to be true is movies.length < 0
+      //slider will auto scroll through blank cards while the movies load
+  }
 }
 
 const Slider = (props) => {

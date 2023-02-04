@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import movieData from '../../movieData';
 import Header from '../Header/Header'
 import Slider from '../Slider/Slider'
+import MovieDetails from '../MovieDetails/MovieDetails'
 import './App.css';
 
 class App extends Component {
@@ -31,6 +31,10 @@ class App extends Component {
     this.setState({ selectedMovie: id })
   }
 
+  backToMain = () => {
+    this.setState({ selectedMovie: '' })
+  }
+
   findWorstMovies = () => {
     return this.state.movies
     .sort((a, b) => a.average_rating - b.average_rating)
@@ -42,7 +46,10 @@ class App extends Component {
       return (<p>error</p>)
     } 
     if(selectedMovie) {
-      return (<p>you picked a movie!</p>)
+      console.log('movie selected: ', selectedMovie)
+      return (
+          <MovieDetails goBack={this.backToMain} movieId={this.state.selectedMovie} />
+      )
     }
     if(movies.length < 1) {
       return (<p>loading...</p>)
