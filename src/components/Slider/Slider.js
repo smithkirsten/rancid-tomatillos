@@ -8,7 +8,10 @@ import 'swiper/scss/autoplay'
 import { Autoplay, Navigation } from 'swiper'
 
 
-const buildABear = ({ movies, selectMovie }) => {
+const buildABear = ({ movies, selectMovie, videos }) => {
+  if(videos.length > 0) {
+    //return video slides
+  }
 
   if(movies.length > 0) {
     return movies.map(movie => {
