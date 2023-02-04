@@ -4,7 +4,7 @@ import Slider from '../Slider/Slider'
 
 const MovieMain = (props) => {
   const { title, tagline, runtime, genres, poster_path, overview } = props.movie
-  const { videos } = props.videos
+  const { videos } = props
   return (
     <section className="movie-info">
       <div className="overview-area">
@@ -15,10 +15,9 @@ const MovieMain = (props) => {
       <div className="genres">
         <p>{genres}</p>
       </div>
-      <Slider videos={props.videos}/>
+      <Slider videos={videos}/>
     </section>
   )
 }
-//add videos to Slider
 
 export default MovieMain
