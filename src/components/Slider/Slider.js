@@ -9,16 +9,24 @@ import { Autoplay, Navigation } from 'swiper'
 
 
 const buildABear = ({ movies, selectMovie }) => {
-  return movies.length > 1 ?
-  movies.map(movie => {
-    return (
-    <SwiperSlide className="slide" key={movie.id}><img src={movie.poster_path} alt={movie.title} onClick={() => selectMovie(movie.id)} id={movie.id}/></SwiperSlide>
-    )
-  }) :
-  (
-    <SwiperSlide className="slide" key={Date.now()}><div className="loading-card"></div></SwiperSlide>
-  )
 
+  if(movies.length > 0) {
+    return movies.map(movie => {
+      return (
+      <SwiperSlide className="slide" key={movie.id}><img src={movie.poster_path} alt={movie.title} onClick={() => selectMovie(movie.id)} id={movie.id}/></SwiperSlide>
+      )
+    }) 
+  } else {
+    let slides = []
+    for (let i = 0; i < 50; i++) {
+      slides.push((
+        <SwiperSlide className="slide" key={Date.now()}><div className="loading-card"></div></SwiperSlide>
+      ))
+    }
+    return slides
+  }
+  //style loading-card and set scroll to be true is movies.length < 0
+    //slider will auto scroll through blank cards while the movies load
 }
 
 const Slider = (props) => {
