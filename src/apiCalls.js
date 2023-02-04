@@ -11,4 +11,4 @@ const getMovies = async() => {
   }
 }
 
-export default getMovies
+export default { getMovies }
