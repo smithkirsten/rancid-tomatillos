@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
-// import 'swiper/css/bundle'
+// import 'swiper/css/bundle' <- not working
 import './Slider.css'
 import 'swiper/scss'
 import 'swiper/scss/navigation'
@@ -9,12 +9,15 @@ import { Autoplay, Navigation } from 'swiper'
 
 
 const buildABear = ({ movies, selectMovie }) => {
-  console.log('# of slides: ', movies.length)
-  return movies.map(movie => {
+  return movies.length > 1 ?
+  movies.map(movie => {
     return (
     <SwiperSlide className="slide" key={movie.id}><img src={movie.poster_path} alt={movie.title} onClick={() => selectMovie(movie.id)} id={movie.id}/></SwiperSlide>
     )
-  })
+  }) :
+  (
+    <SwiperSlide className="slide" key={Date.now()}><div className="loading-card"></div></SwiperSlide>
+  )
 
 }
 

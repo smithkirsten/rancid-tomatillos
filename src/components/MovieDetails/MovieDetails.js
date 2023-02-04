@@ -20,8 +20,8 @@ class MovieDetails extends Component {
         revenue:100853753, 
         runtime:139, 
         tagline: "It's a movie!" 
-      }
-      ,
+      },
+      videos: [],
       error: ''
     }
   }
@@ -40,7 +40,7 @@ class MovieDetails extends Component {
     return (
       <main className="App">
         <MovieHeader backToMain={this.props.backToMain} movie={this.props.movie}/>
-        <MovieMain movie={this.props.movie}/>
+        <MovieMain movie={this.props.movie} videos={this.props.videos}/>
       </main>
     )
 
