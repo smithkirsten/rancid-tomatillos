@@ -48,7 +48,7 @@ class App extends Component {
     if(selectedMovie) {
       console.log('movie selected: ', selectedMovie)
       return (
-          <MovieDetails goBack={this.backToMain} movieId={selectedMovie} />
+          <MovieDetails goBack={this.backToMain} movieId={this.state.selectedMovie} />
       )
     }
     if(movies.length < 1) {
