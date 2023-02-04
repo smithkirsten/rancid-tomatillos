@@ -15,23 +15,12 @@ class App extends Component {
     }
   }
 
-
   componentDidMount = async() => {
-    const data = await apiCalls.getMovies()
+    const data = await apiCalls.getMovies('movies')
     console.log(data)
     data.movies ? 
       this.setState({ movies: data.movies }) :
       this.setState({ error: data.error })
-
-    // try {
-    //   const res = await fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
-		//   const data = await res.json() 
-    //   this.setState({movies: data.movies})
-    // } catch(err) {
-    //   console.log(err)
-    //   this.setState({ error: err })
-    // }
-
   }
 
   selectMovie = (id) => {
@@ -72,7 +61,6 @@ class App extends Component {
       )
     }
   }
-
   render() {
     return this.determineRender(this.state)
   }
