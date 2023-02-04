@@ -16,13 +16,17 @@ class Search extends Component {
 
   render() {
     return(
-      <input 
-        type='text'
-        name='input'
-        value={this.state.input}
-        placeholder='Search Movies...'
-        onChange={(event) => this.handleChange(event)}
-      />
+      <div>
+        <label for="searchBar">Search Bar</label>
+        <input 
+          id='searchBar'
+          type='text'
+          name='input'
+          value={this.state.input}
+          placeholder='Search Movies...'
+          onChange={(event) => this.handleChange(event)}
+        />
+      </div>
     )
   }
 } 

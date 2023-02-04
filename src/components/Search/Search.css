@@ -1,7 +1,11 @@
 input {
   height: 4vh;
-  width: 13%;
+  width: 100%;
   border: none;
   border-radius: 3px;
-  margin: .5%;
+  margin: 20px;
+}
+
+label {
+  display: none;
 }/*# sourceMappingURL=Search.css.map */
