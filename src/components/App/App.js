@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Header from '../Header/Header'
 import Slider from '../Slider/Slider'
+import MovieDetails from '../MovieDetails/MovieDetails'
 import './App.css';
 
 class App extends Component {
@@ -48,8 +49,7 @@ class App extends Component {
       return (
         //can we pass the movie object we GET into selectedMovie?
         <main className='App'>
-          <MovieHeader goBack={this.backToMain} movie={selectedMovie}/> 
-          <MovieMain movie={selectedMovie}/>
+          <MovieDetails />
         </main>
       )
     }
