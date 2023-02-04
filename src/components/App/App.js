@@ -46,6 +46,7 @@ class App extends Component {
       return (<p>error</p>)
     } 
     if(selectedMovie) {
+      console.log('movie selected: ', selectedMovie)
       return (
           <MovieDetails goBack={this.backToMain} movieId={selectedMovie} />
       )
