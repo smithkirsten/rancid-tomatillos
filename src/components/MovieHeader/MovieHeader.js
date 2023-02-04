@@ -2,7 +2,7 @@ import './MovieHeader.css'
 import React, { Component } from 'react'
 
 const MovieHeader = (props) => {
-  const { title, backdrop_path, rating, release_date, budget, revenue} = props.movie
+  const { title, backdrop_path, rating, release_date, budget, revenue } = props.movie
   //install day.js
   const background = `background-image: url(${backdrop_path})`
   return (
