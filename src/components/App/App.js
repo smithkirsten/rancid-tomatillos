@@ -30,6 +30,10 @@ class App extends Component {
     this.setState({ selectedMovie: id })
   }
 
+  backToMain = () => {
+    this.setState({ selectedMovie: '' })
+  }
+
   findWorstMovies = () => {
     return this.state.movies
     .sort((a, b) => a.average_rating - b.average_rating)
@@ -44,7 +48,7 @@ class App extends Component {
       return (
         //can we pass the movie object we GET into selectedMovie?
         <main className='App'>
-          <MovieHeader goBack={this.goBack}movie={selectedMovie}/> 
+          <MovieHeader goBack={this.backToMain} movie={selectedMovie}/> 
           <MovieMain movie={selectedMovie}/>
         </main>
       )
