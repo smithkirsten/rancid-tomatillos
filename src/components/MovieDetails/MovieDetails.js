@@ -28,6 +28,9 @@ class MovieDetails extends Component {
   //props are: movie id and backToMain function
   componentDidMount(props) {
     console.log('movie details did mount', this.props.movieId )
+    //GET Movie
+    //GET Videos
+
     //GET for individual movie details and videos
     //movie will be returned as an object containing 1 "movie" property. Make sure to assign state to data.Movie rather than just the returned data
   }
