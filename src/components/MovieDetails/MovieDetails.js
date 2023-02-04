@@ -11,11 +11,12 @@ class MovieDetails extends Component {
       error: ''
     }
   }
-  componentDidMount(props) {
-    //GET in componentdidmount
+  //props are: movie id and backToMain function
+  componentDidMount({ movieId }) {
+    //GET for individual movie details and videos
   }
-  componentDidUpdate(props) {
-    //GET in subsequent updates to state
+  componentDidUpdate({ movieId }) {
+    //GET for individual movie details and videos
   }
 
   render(props) {
