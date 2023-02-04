@@ -40,7 +40,7 @@ class MovieDetails extends Component {
     return (
       <main className="App">
         <MovieHeader backToMain={this.props.backToMain} movie={this.props.movie}/>
-        <MovieMain move={this.props.movie}/>
+        <MovieMain movie={this.props.movie}/>
       </main>
     )
 

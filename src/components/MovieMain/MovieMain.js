@@ -17,6 +17,9 @@ movie: {
 
 const MovieMain = () => {
 
+  return (
+    
+  )
 }
 
 export default MovieMain

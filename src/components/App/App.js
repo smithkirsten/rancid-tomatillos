@@ -47,9 +47,7 @@ class App extends Component {
     } 
     if(selectedMovie) {
       return (
-        <main className='App'>
           <MovieDetails goBack={this.backToMain} movieId={selectedMovie} />
-        </main>
       )
     }
     if(movies.length < 1) {
