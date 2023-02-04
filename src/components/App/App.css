@@ -4,5 +4,6 @@
   margin: 0;
   background-color: rgb(35, 34, 37);
   color: rgb(255, 255, 240);
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: 'Oswald', sans-serif;
+  overflow-y: scroll;
 }/*# sourceMappingURL=App.css.map */
