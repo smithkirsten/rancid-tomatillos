@@ -3,7 +3,7 @@ import Header from '../Header/Header'
 import Slider from '../Slider/Slider'
 import MovieDetails from '../MovieDetails/MovieDetails'
 import './App.css';
-import '../../apiCalls'
+import { getMovies } from '../../apiCalls'
 
 class App extends Component {
   constructor() {
