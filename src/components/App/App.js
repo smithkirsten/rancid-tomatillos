@@ -47,9 +47,8 @@ class App extends Component {
     } 
     if(selectedMovie) {
       return (
-        //can we pass the movie object we GET into selectedMovie?
         <main className='App'>
-          <MovieDetails />
+          <MovieDetails goBack={this.backToMain} movieId={selectedMovie} />
         </main>
       )
     }
