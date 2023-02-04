@@ -58,8 +58,8 @@ class App extends Component {
         <main className='App'>
           <Header />
           <section className="movies-display">
-            <Slider movies={this.findWorstMovies()} scroll={false} selectMovie={this.selectMovie}/>
-            <Slider movies={this.state.movies} scroll={true} selectMovie={this.selectMovie}/>
+            <Slider sectionTitle={'Worst Rated Movies'} movies={this.findWorstMovies()} scroll={false} selectMovie={this.selectMovie}/>
+            <Slider sectionTitle={'All Movies'} movies={this.state.movies} scroll={true} selectMovie={this.selectMovie}/>
           </section>
         </main>
       )
