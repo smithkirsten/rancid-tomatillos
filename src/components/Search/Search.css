@@ -5,6 +5,10 @@ input {
   border-radius: 3px;
 }
 
+.search-container {
+  margin: 20px;
+}
+
 label {
   display: none;
 }/*# sourceMappingURL=Search.css.map */

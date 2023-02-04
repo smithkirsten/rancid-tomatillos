@@ -16,7 +16,7 @@ class Search extends Component {
 
   render() {
     return(
-      <div>
+      <div className='search-container'>
         <label for="searchBar">Search Bar</label>
         <input 
           id='searchBar'
