@@ -19,5 +19,6 @@ const MovieMain = (props) => {
     </section>
   )
 }
+//should overview area be its own component?
 
 export default MovieMain
