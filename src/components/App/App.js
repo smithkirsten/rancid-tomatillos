@@ -41,7 +41,13 @@ class App extends Component {
       return (<p>error</p>)
     } 
     if(selectedMovie) {
-      return (<p>you picked a movie!</p>)
+      return (
+        //can we pass the movie object we GET into selectedMovie?
+        <main className='App'>
+          <MovieHeader goBack={this.goBack}movie={selectedMovie}/> 
+          <MovieMain movie={selectedMovie}/>
+        </main>
+      )
     }
     if(movies.length < 1) {
       return (<p>loading...</p>)
