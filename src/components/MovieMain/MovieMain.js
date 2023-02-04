@@ -9,8 +9,10 @@ const MovieMain = (props) => {
     <section className="movie-info">
       <div className="overview-area">
         <p className="tagline">{tagline}<span className="runtime">{runtime}</span></p>
-        <img src={poster_path} alt={title}/>
-        <p className="summary">{overview}</p>
+        <div className='poster-section'>
+          <img src={poster_path} alt={title}/>
+          <p className="summary">{overview}</p>
+        </div>
       </div>
       <div className="genres">
         <p>{genres}</p>
