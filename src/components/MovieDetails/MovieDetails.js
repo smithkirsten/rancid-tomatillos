@@ -15,17 +15,21 @@ class MovieDetails extends Component {
   }
   //props are: movie id and backToMain function
 
-  displayMovie = async(props) => {
-    const movieDeets = await apiCalls.getMovies('movies', this.props.movieId)
-    const videos = await apiCalls.getMovies('videos', this.props.movieId)
-    this.setState({ movie: movieDeets.movie, videos: videos })
+  displayMovie = async(prevState) => {
+    if(!prevState || prevState.movie.id !== this.state.movie.id) {
+      const movieDeets = await apiCalls.getMovies('movies', this.props.movieId)
+      const videos = await apiCalls.getMovies('videos', this.props.movieId)
+      this.setState({ movie: movieDeets.movie, videos: videos })
+    }
   }
   componentDidMount = async() => {
     await this.displayMovie()
   }
 
-  componentDidUpdate = async() => {
-    await this.displayMovie()
+  componentDidUpdate = async(prevProps, prevState) => {
+    console.log('componentDidUpdate! prevState: ', prevState)
+    //ask if state has changed and if it has, re-render
+    await this.displayMovie(prevState)
   }
 
 
