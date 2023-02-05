@@ -1,4 +1,5 @@
 .movie-header {
+  background-size: cover;
   height: 50vh;
   display: flex;
   flex-direction: row;
