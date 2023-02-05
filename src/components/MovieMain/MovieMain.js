@@ -5,6 +5,7 @@ import Slider from '../Slider/Slider'
 const MovieMain = (props) => {
   const { title, tagline, runtime, genres, poster_path, overview, budget, revenue } = props.movie
   const { videos } = props
+  console.log(budget, revenue)
   const movieHours = runtime / 60
   const movieMinutes = (movieHours - Math.floor(movieHours)) * 60
   // console.log(movieHours, Math.(movieHours))
@@ -17,10 +18,10 @@ const MovieMain = (props) => {
           <img className= "poster" src={poster_path} alt={title}/>
           <p className="summary">{overview}</p>
         </div>
+        <div className="money-matters">
+          {revenue !== 0 && (<p><strong>Revenue:</strong> {budget}</p>)}
+          {budget !== 0 && (<p><strong>Budget:</strong> {revenue}</p>)}
       </div>
-      <div className="genres">
-          <p><strong>Revenue:</strong> {budget}</p>
-          <p><strong>Budget:</strong> {revenue}</p>
       </div>
       <Slider videos={videos}/>
     </section>

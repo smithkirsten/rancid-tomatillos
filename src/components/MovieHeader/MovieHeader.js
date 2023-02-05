@@ -13,7 +13,7 @@ const MovieHeader = (props) => {
       </div>
       <div className='genres-back-button-section'>
         <button className='back-to-main-button' onClick={props.backToMain}>Back to All Movies</button>
-        <div className='revenue-details'>
+        <div className='deets genres'>
           <p>{genres}</p>
         </div>
       </div>
