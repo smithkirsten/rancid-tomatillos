@@ -1,6 +1,7 @@
 @use "../../abstracts/index.scss" as *;
 
 .Header {
+  font-family: $headerFont;
   background-color: index.$darkGrey;
   height: 25vh;
   display: flex;

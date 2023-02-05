@@ -19,7 +19,7 @@ class MovieDetails extends Component {
     if(!prevState || prevState.movie.id !== this.state.movie.id) {
       const movieDeets = await apiCalls.getMovies('movies', this.props.movieId)
       const videos = await apiCalls.getMovies('videos', this.props.movieId)
-      this.setState({ movie: movieDeets.movie, videos: videos })
+      this.setState({ movie: movieDeets.movie, videos: videos.videos })
     }
   }
   componentDidMount = async() => {

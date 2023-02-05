@@ -43,6 +43,7 @@
 .back-to-main-button {
   @include creamBackground;
   text-align: center;
+  cursor: pointer;
 }
 
 .genres {

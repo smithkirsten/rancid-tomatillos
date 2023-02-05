@@ -8,6 +8,8 @@ import 'swiper/scss/autoplay'
 import { Autoplay, Navigation, A11y, Keyboard } from 'swiper'
 
 const buildVideoSlides = (videos) => {
+  console.log(videos)
+  //videos is an aray of 
 
 }
 
