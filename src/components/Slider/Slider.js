@@ -14,8 +14,8 @@ const buildVideoSlides = (videos) => {
     return (
     <SwiperSlide className="video-slide" key={video.id}>
       <iframe 
-        width="360" 
-        height="215" 
+        width="560" 
+        height="315" 
         src={src} 
         title="YouTube video player" 
         frameborder="0" 
@@ -65,7 +65,7 @@ const Slider = (props) => {
   const type = props.videos ? 'video-swiper' : 'poster-swiper'
   const slides = buildABear(props)
   const scroll = props.scroll ? { delay: 1200, disableOnInteraction: true, } : false //add autoplay if it is for all movies so they will rotate
-  const perView = props.videos ? 2 : 7
+  const perView = props.videos ? 1 : 7
   const ally = {
     prevSlideMessage: "Previous slide",
     nextSlideMessage: "Next slide",
