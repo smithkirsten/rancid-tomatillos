@@ -3,6 +3,11 @@ Swiper {
   width: 90vw;
 }
 
+.video-swiper {
+  height: 30vh;
+  width: 50vw;
+}
+
 .swiper-wrapper {
   margin: 20px;
 }
