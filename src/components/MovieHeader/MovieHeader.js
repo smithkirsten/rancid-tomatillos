@@ -3,6 +3,7 @@ import dayjs from 'dayjs'
 import React from 'react'
 
 const MovieHeader = (props) => {
+  console.log(props)
   const { title, backdrop_path, average_rating, runtime, genres } = props.movie
   const movieHours = runtime / 60
   const movieMinutes = (movieHours - Math.floor(movieHours)) * 60

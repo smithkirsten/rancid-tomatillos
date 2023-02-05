@@ -33,6 +33,7 @@ class MovieDetails extends Component {
 
 
   render(props) {
+    console.log(this.props)
     return (
       <main className="App">
         <MovieHeader backToMain={this.props.backToMain} movie={this.state.movie}/>

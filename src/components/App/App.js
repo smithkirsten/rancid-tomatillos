@@ -28,6 +28,7 @@ class App extends Component {
   }
 
   backToMain = () => {
+    console.log('back to main!')
     this.setState({ selectedMovie: '' })
   }
 
@@ -44,7 +45,7 @@ class App extends Component {
     if(selectedMovie) {
       console.log('movie selected: ', selectedMovie)
       return (
-          <MovieDetails goBack={this.backToMain} movieId={this.state.selectedMovie} />
+          <MovieDetails backToMain={this.backToMain} movieId={this.state.selectedMovie} />
       )
     }
     if(movies.length < 1) {
