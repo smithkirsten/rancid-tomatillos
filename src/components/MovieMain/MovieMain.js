@@ -14,8 +14,10 @@ const MovieMain = (props) => {
       <div className="overview-area">
         <p className="tagline">{tagline}<span className="runtime">{formattedTime}</span></p>
         <div className='poster-section'>
-          <img src={poster_path} alt={title}/>
-          <p className="summary">{overview}</p>
+          <img className= "poster" src={poster_path} alt={title}/>
+          <div className="summary">
+            {overview}
+          </div>
         </div>
       </div>
       <div className="genres">

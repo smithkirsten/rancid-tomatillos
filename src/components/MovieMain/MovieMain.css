@@ -1,9 +1,13 @@
+* {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 14px;
+}
+
 .movie-info {
   display: flex;
   flex-direction: row;
   border: 1px solid;
   height: 50vh;
-  font-size: 18px;
 }
 
 .overview-area {
@@ -13,25 +17,26 @@
   margin: 20px;
 }
 
+.summary {
+  border: 1px solid white;
+  margin: 0 0 0 15px;
+}
+
 .poster-section {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
+  width: 40vw;
 }
 
-img {
-  height: 28vh;
-  width: 12vw;
+.poster {
+  height: 35vh;
+}
+
+.tagline {
+  font-style: italic;
 }
 
 .runtime {
   margin: 20px;
-}
-
-.summary {
-  margin: 0 0 0 15px;
-}
-
-.genres {
-  font-size: 40px;
 }/*# sourceMappingURL=MovieMain.css.map */

@@ -1,12 +1,12 @@
 @use "../../abstracts/index.scss" as *;
 
 .movie-header {
+  @include bodyFont;
   background-size: cover;
   height: 50vh;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  font-family: $bodyFont;
 }
 
 .header-details {

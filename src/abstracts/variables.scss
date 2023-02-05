@@ -4,12 +4,17 @@ $darkGrey: rgb(74, 88, 96);
 $black: rgb(35, 34, 37);
 
 $headerFont: 'Oswald', sans-serif;
-$bodyFont: 'Source Sans Pro', sans-serif;
+// $bodyFont: 'Source Sans Pro', sans-serif;
 
 @mixin creamBackground {
   color: $darkGrey;
   background-color: $cream;
   margin: 15px;
-  border-radius: 3px; 
+  border-radius: 1px; 
   padding: 5px;
+}
+
+@mixin bodyFont {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 14px;
 }
