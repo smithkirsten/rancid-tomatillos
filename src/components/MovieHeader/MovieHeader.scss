@@ -22,28 +22,25 @@
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.movie-title {
-
-}
-
-.movie-rating {
-
-}
-
-.movie-date {
-
-}
-
 .genres-back-button-section {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: flex-end
 }
 
 .back-to-main-button {
   @include creamBackground;
+  width: 12vw;
+  height: 5vh;
+  font-size: 16px;
   text-align: center;
   cursor: pointer;
+}
+.back-to-main-button:hover {
+  background-color:red;
+  color:$cream;
+
 }
 
 .genres {

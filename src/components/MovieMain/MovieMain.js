@@ -15,7 +15,7 @@ const MovieMain = (props) => {
           <img className= "poster" src={poster_path} alt={title}/>
           <div>
             <p className="tagline">{tagline}</p>
-            <p className="deets movie-date">Released {dayjs(release_date).format('MMM D, YYYY')}</p>
+            <p className="movie-date">Released {dayjs(release_date).format('MMM D, YYYY')}</p>
             <p className="summary">{overview}</p>
           </div>
         </div>
