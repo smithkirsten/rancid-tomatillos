@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import Slider from '../Slider/Slider'
 
 const MovieMain = (props) => {
-  const { title, tagline, runtime, genres, poster_path, overview } = props.movie
+  const { title, tagline, runtime, genres, poster_path, overview, budget, revenue } = props.movie
   const { videos } = props
   const movieHours = runtime / 60
   const movieMinutes = (movieHours - Math.floor(movieHours)) * 60
@@ -15,13 +15,12 @@ const MovieMain = (props) => {
         <p className="tagline">{tagline}<span className="runtime">{formattedTime}</span></p>
         <div className='poster-section'>
           <img className= "poster" src={poster_path} alt={title}/>
-          <div className="summary">
-            {overview}
-          </div>
+          <p className="summary">{overview}</p>
         </div>
       </div>
       <div className="genres">
-        <p>{genres}</p>
+          <p><strong>Revenue:</strong> {budget}</p>
+          <p><strong>Budget:</strong> {revenue}</p>
       </div>
       <Slider videos={videos}/>
     </section>

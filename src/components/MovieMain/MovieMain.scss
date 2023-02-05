@@ -6,7 +6,6 @@
 .movie-info {
   display: flex;
   flex-direction: row;
-  border: 1px solid;
   height: 50vh;
 }
 
@@ -18,7 +17,6 @@
 }
 
 .summary {
-  border: 1px solid white;
   margin: 0 0 0 15px;
 }
 .poster-section {
@@ -37,7 +35,7 @@
 }
 
 .runtime {
-  
+
   margin: 20px;
 }
 
