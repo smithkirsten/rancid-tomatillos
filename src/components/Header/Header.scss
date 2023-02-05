@@ -8,6 +8,10 @@
   justify-content: space-between;
   align-items: flex-end;
 }
+h1 {
+  font-family: $headerFont;
+  //why do NONE of the reassignments to headerfont work??? (see Header, see APP, see logo
+}
 
 .logo {
   display: flex;

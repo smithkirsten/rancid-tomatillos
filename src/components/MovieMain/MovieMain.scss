@@ -16,7 +16,7 @@
   margin: 20px;
 }
 
-.summary {
+.summary, .tagline {
   margin: 0 0 0 15px;
 }
 .poster-section {
@@ -34,10 +34,11 @@
   font-style: italic;
 }
 
-.runtime {
-
-  margin: 20px;
+.movie-date {
+  background-color: $darkGrey;
+  // not working
 }
+
 
 
 

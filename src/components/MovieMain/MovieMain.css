@@ -16,7 +16,7 @@
   margin: 20px;
 }
 
-.summary {
+.summary, .tagline {
   margin: 0 0 0 15px;
 }
 
@@ -35,6 +35,6 @@
   font-style: italic;
 }
 
-.runtime {
-  margin: 20px;
+.movie-date {
+  background-color: rgb(74, 88, 96);
 }/*# sourceMappingURL=MovieMain.css.map */
