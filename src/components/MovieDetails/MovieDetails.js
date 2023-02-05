@@ -27,7 +27,6 @@ class MovieDetails extends Component {
   }
 
   componentDidUpdate = async(prevProps, prevState) => {
-    console.log('componentDidUpdate! prevState: ', prevState)
     //ask if state has changed and if it has, re-render
     await this.displayMovie(prevState)
   }
