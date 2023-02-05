@@ -4,8 +4,6 @@ import React from 'react'
 
 const MovieHeader = (props) => {
   const { title, backdrop_path, average_rating, release_date, budget, revenue } = props.movie
-
-  console.log(backdrop_path)
   return (
     <nav className="movie-header" style={{ backgroundImage: `url(${backdrop_path})` }}>
       <div className='header-details'>
