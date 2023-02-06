@@ -1,15 +1,13 @@
 import React, { Component } from 'react'
-import Header from '../Header/Header'
-import Slider from '../Slider/Slider'
 import MovieDetails from '../MovieDetails/MovieDetails'
 import MainPage from '../MainPage/MainPage'
 import apiCalls from '../../apiCalls'
 import './App.css';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 class App extends Component {
   constructor() {
-    super() 
+    super()
     this.state = {
       error: '',
       movies: [],
@@ -17,10 +15,10 @@ class App extends Component {
     }
   }
 
-  componentDidMount = async() => {
+  componentDidMount = async () => {
     const data = await apiCalls.getMovies('movies')
     console.log(data)
-    data.movies ? 
+    data.movies ?
       this.setState({ movies: data.movies }) :
       this.setState({ error: data.error })
   }
@@ -36,30 +34,43 @@ class App extends Component {
 
   findWorstMovies = () => {
     return this.state.movies
-    .sort((a, b) => a.average_rating - b.average_rating)
-    .slice(0, 10)
+      .sort((a, b) => a.average_rating - b.average_rating)
+      .slice(0, 10)
   }
 
   determineRender = ({ error, movies, selectedMovie }) => {
-    if(error) {
+    if (error) {
       return (<p>error</p>)
-    } 
-    if(selectedMovie) {
+      // <Route path="error" element={<Error />}/>
+    }
+    if (selectedMovie) {
       console.log('movie selected: ', selectedMovie)
       return (
-          <MovieDetails backToMain={this.backToMain} movieId={this.state.selectedMovie} />
+        // <Route path="/movies/:id" element={<MovieDetails backToMain={this.backToMain} movieId={this.state.selectedMovie} />} />
+        <MovieDetails backToMain={this.backToMain} movieId={this.state.selectedMovie} />
       )
     }
-    if(movies.length < 1) {
+    if (movies.length < 1) {
       return (<p>loading...</p>)
     } else {
-      return(
-        <MainPage movies={this.state.movies} worstMovies={this.findWorstMovies()} selectMovie={this.selectMovie}/>
+      return (
+        // <Route path="/movies/" element={<MainPage movies={this.state.movies} worstMovies={this.findWorstMovies()} selectMovie={this.selectMovie}/>} />
+        <MainPage movies={this.state.movies} worstMovies={this.findWorstMovies()} selectMovie={this.selectMovie} />
       )
     }
   }
+  
   render() {
-    return this.determineRender(this.state)
+    return (
+      <BrowserRouter >
+        {this.determineRender(this.state)}
+        <Switch>
+          <Route path='/main' component={MainPage} />
+          <Route path='/main/:id' component={MovieDetails} />
+          {/* <Route path='/' render={ () => <MainPage movies={this.state.movies} worstMovies={this.findWorstMovies()} selectMovie={this.selectMovie} /> } /> */}
+        </Switch>
+      </BrowserRouter>
+    )
   }
 }
 
