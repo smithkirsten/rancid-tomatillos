@@ -1,6 +1,7 @@
 import './MovieHeader.css'
 import dayjs from 'dayjs'
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const MovieHeader = (props) => {
   console.log(props)
@@ -16,7 +17,9 @@ const MovieHeader = (props) => {
         <p className="deets movie-runtime">{formattedTime}</p>
       </div>
       <div className='genres-back-button-section'>
-        <button className='back-to-main-button' onClick={props.backToMain}>Back to All Movies</button>
+        <Link to="/main" ><button className='back-to-main-button' onClick={props.backToMain}>Back to All Movies</button>
+        </Link>
+        {/* <Link to='/main' onClick={props.backToMain} >Back to All Movies</Link> */}
         <div className='deets genres'>
           <p>{genres}</p>
         </div>
