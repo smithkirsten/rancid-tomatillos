@@ -2,8 +2,8 @@ import React from 'react'
 import Header from '../Header/Header'
 import Slider from '../Slider/Slider'
 
-const MainPage = ({ movies, worstMovies, selectMovie}) => {
-  console.log(selectMovie)
+const MainPage = ({ movies, worstMovies, selectMovie }) => {
+  console.log(movies, worstMovies)
   return (
     <main className='App'>
       <Header />
