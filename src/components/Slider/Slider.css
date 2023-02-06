@@ -3,11 +3,17 @@ Swiper {
   width: 90vw;
 }
 
+.video-swiper {
+  height: 340px;
+  width: 600px;
+}
+
 .swiper-wrapper {
   margin: 20px;
 }
 
 .section-title {
+  font-family: "Oswald", sans-serif;
   margin: 20px;
 }
 

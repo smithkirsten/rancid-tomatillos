@@ -7,8 +7,24 @@ import 'swiper/scss/navigation'
 import 'swiper/scss/autoplay'
 import { Autoplay, Navigation, A11y, Keyboard } from 'swiper'
 
+//og width: 560 height: 315
 const buildVideoSlides = (videos) => {
-
+  return videos.map(video => {
+    const src = `https://www.youtube.com/embed/${video.key}`
+    return (
+    <SwiperSlide className="video-slide" key={video.id}>
+      <iframe 
+        width="560" 
+        height="315" 
+        src={src} 
+        title="YouTube video player" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        allowfullscreen>
+      </iframe>
+    </SwiperSlide>
+    )
+  })
 }
 
 const buildDummySlides = () => {
@@ -46,9 +62,10 @@ const buildABear = ({ movies, selectMovie, videos }) => {
 }
 
 const Slider = (props) => {
+  const type = props.videos ? 'video-swiper' : 'poster-swiper'
   const slides = buildABear(props)
   const scroll = props.scroll ? { delay: 1200, disableOnInteraction: true, } : false //add autoplay if it is for all movies so they will rotate
-  // const perView = props.scroll ? 7 : 7
+  const perView = props.videos ? 1 : 7
   const ally = {
     prevSlideMessage: "Previous slide",
     nextSlideMessage: "Next slide",
@@ -59,9 +76,10 @@ const Slider = (props) => {
     <div>
       <h2 className='section-title'>{props.sectionTitle}</h2>
       <Swiper
+        className={type}
         spaceBetween={50}
         modules={[Navigation, Autoplay, A11y, Keyboard]}
-        slidesPerView={7}
+        slidesPerView={perView}
         navigation={true}
         direction='horizontal'
         autoplay={scroll}

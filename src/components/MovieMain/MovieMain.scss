@@ -1,11 +1,12 @@
 @use "../../abstracts/index.scss" as *;
 
+* {
+  @include bodyFont;
+}
 .movie-info {
   display: flex;
   flex-direction: row;
-  border: 1px solid;
   height: 50vh;
-  font-size: 18px;
 }
 
 .overview-area {
@@ -15,27 +16,33 @@
   margin: 20px;
 }
 
+.summary, .tagline {
+  margin: 0 0 0 15px;
+}
 .poster-section {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  height: 28vh;
-  width: 12vw;
+  width: 40vw;
+}
+
+.poster {
+  height: 35vh;
 }
 
 .tagline {
-
+  font-size: 18px;
+  font-style: italic;
 }
 
-.runtime {
-  margin: 20px;
+.movie-date {
+  background-color: $darkGrey;
+  margin: 15px;
+  border-radius: 1px; 
+  padding: 5px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.summary {
-  margin: 0 0 0 15px;
-}
 
-.genres {
-  font-size: 40px;//Don't really care for this styling but can work on it later
-}
+
 

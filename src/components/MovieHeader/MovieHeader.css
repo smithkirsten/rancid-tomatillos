@@ -1,10 +1,12 @@
 .movie-header {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 14px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   background-size: cover;
   height: 50vh;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  font-family: "Source Sans Pro", sans-serif;
 }
 
 .header-details {
@@ -18,29 +20,41 @@
   color: rgb(74, 88, 96);
   background-color: rgb(255, 255, 240);
   margin: 15px;
-  border-radius: 3px;
+  border-radius: 1px;
   padding: 5px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.revenue-back-button-section {
+.genres-back-button-section {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: flex-end;
 }
 
 .back-to-main-button {
   color: rgb(74, 88, 96);
   background-color: rgb(255, 255, 240);
   margin: 15px;
-  border-radius: 3px;
+  border-radius: 1px;
   padding: 5px;
+  width: 12vw;
+  height: 5vh;
+  font-size: 16px;
   text-align: center;
+  border: rgb(74, 88, 96) 1px solid;
+  cursor: pointer;
 }
 
-.revenue-details {
+.back-to-main-button:hover {
+  background-color: red;
+  color: rgb(255, 255, 240);
+}
+
+.genres {
   color: rgb(74, 88, 96);
   background-color: rgb(255, 255, 240);
   margin: 15px;
-  border-radius: 3px;
+  border-radius: 1px;
   padding: 5px;
 }/*# sourceMappingURL=MovieHeader.css.map */

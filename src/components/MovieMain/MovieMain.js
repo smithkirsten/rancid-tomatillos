@@ -1,25 +1,28 @@
 import './MovieMain.css'
+import dayjs from 'dayjs'
 import React, { Component } from 'react'
 import Slider from '../Slider/Slider'
 
 const MovieMain = (props) => {
-  const { title, tagline, runtime, genres, poster_path, overview } = props.movie
+  const { title, tagline, release_date, poster_path, overview, budget, revenue } = props.movie
   const { videos } = props
-  const movieHours = runtime / 60
-  const movieMinutes = (movieHours - Math.floor(movieHours)) * 60
-  // console.log(movieHours, Math.(movieHours))
-  const formattedTime = `${Math.floor(movieHours)} hrs ${Math.abs(Math.floor(movieMinutes))} mins`
+  console.log(budget, revenue)
+
   return (
     <section className="movie-info">
       <div className="overview-area">
-        <p className="tagline">{tagline}<span className="runtime">{formattedTime}</span></p>
         <div className='poster-section'>
-          <img src={poster_path} alt={title}/>
-          <p className="summary">{overview}</p>
+          <img className= "poster" src={poster_path} alt={title}/>
+          <div>
+            <p className="tagline">{tagline}</p>
+            <p className="movie-date">Released {dayjs(release_date).format('MMM D, YYYY')}</p>
+            <p className="summary">{overview}</p>
+          </div>
         </div>
+        <div className="money-matters">
+          {revenue !== 0 && (<p><strong>Revenue:</strong> {budget}</p>)}
+          {budget !== 0 && (<p><strong>Budget:</strong> {revenue}</p>)}
       </div>
-      <div className="genres">
-        <p>{genres}</p>
       </div>
       <Slider videos={videos}/>
     </section>

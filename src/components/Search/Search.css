@@ -2,11 +2,11 @@ input {
   height: 4vh;
   width: 100%;
   border: none;
-  border-radius: 3px;
 }
 
 .search-container {
-  margin: 20px;
+  margin-right: 10px;
+  margin-bottom: 5px;
 }
 
 label {
