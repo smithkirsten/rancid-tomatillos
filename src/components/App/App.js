@@ -2,8 +2,10 @@ import React, { Component } from 'react'
 import Header from '../Header/Header'
 import Slider from '../Slider/Slider'
 import MovieDetails from '../MovieDetails/MovieDetails'
-import './App.css';
+import MainPage from '../MainPage/MainPage'
 import apiCalls from '../../apiCalls'
+import './App.css';
+import { BrowserRouter } from 'react-router-dom';
 
 class App extends Component {
   constructor() {
@@ -52,13 +54,7 @@ class App extends Component {
       return (<p>loading...</p>)
     } else {
       return(
-        <main className='App'>
-          <Header />
-          <section className="movies-display">
-            <Slider sectionTitle={'Worst Rated Movies'} movies={this.findWorstMovies()} scroll={false} selectMovie={this.selectMovie}/>
-            <Slider sectionTitle={'All Movies'} movies={this.state.movies} scroll={true} selectMovie={this.selectMovie}/>
-          </section>
-        </main>
+        <MainPage movies={this.state.movies} worstMovies={this.findWorstMovies()} selectMovie={this.selectMovie}/>
       )
     }
   }
