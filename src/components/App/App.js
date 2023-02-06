@@ -46,7 +46,6 @@ class App extends Component {
     if (selectedMovie) {
       console.log('movie selected: ', selectedMovie)
       return (
-        // <Route path="/movies/:id" element={<MovieDetails backToMain={this.backToMain} movieId={this.state.selectedMovie} />} />
         <MovieDetails backToMain={this.backToMain} movieId={this.state.selectedMovie} />
       )
     }
@@ -54,7 +53,6 @@ class App extends Component {
       return (<p>loading...</p>)
     } else {
       return (
-        // <Route path="/movies/" element={<MainPage movies={this.state.movies} worstMovies={this.findWorstMovies()} selectMovie={this.selectMovie}/>} />
         <MainPage movies={this.state.movies} worstMovies={this.findWorstMovies()} selectMovie={this.selectMovie} />
       )
     }
@@ -65,9 +63,9 @@ class App extends Component {
       <BrowserRouter >
         {this.determineRender(this.state)}
         <Switch>
-          <Route path='/main' component={MainPage} />
-          <Route path='/main/:id' component={MovieDetails} />
-          {/* <Route path='/' render={ () => <MainPage movies={this.state.movies} worstMovies={this.findWorstMovies()} selectMovie={this.selectMovie} /> } /> */}
+          <Route path='movie/:id' component={MovieDetails} />
+          <Route path='/main' component={MainPage} /> 
+          // Home page work path to '/main' or else it won't load correctly
         </Switch>
       </BrowserRouter>
     )
