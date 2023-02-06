@@ -6,6 +6,7 @@ import 'swiper/scss'
 import 'swiper/scss/navigation'
 import 'swiper/scss/autoplay'
 import { Autoplay, Navigation, A11y, Keyboard } from 'swiper'
+import { Link } from 'react-router-dom'
 
 //og width: 560 height: 315
 const buildVideoSlides = (videos) => {
@@ -40,8 +41,9 @@ const buildDummySlides = () => {
 const buildMovieSlides = (movies, selectMovie) => {
   return movies.map(movie => {
     const aria = `Click to view details for ${movie.title}`
+
     return (
-        <SwiperSlide className="slide" key={movie.id}><button onClick={() => selectMovie(movie.id)} id={movie.id}><img className='poster-image' aria-label={aria} src={movie.poster_path} alt={movie.title} /></button></SwiperSlide>
+        <SwiperSlide className="slide" key={movie.id}><Link to={"movie/" + movie.id} ><button onClick={() => selectMovie(movie.id)} id={movie.id}><img className='poster-image' aria-label={aria} src={movie.poster_path} alt={movie.title} /></button></Link></SwiperSlide>
     )
   }) 
 }
@@ -86,8 +88,6 @@ const Slider = (props) => {
         a11y={ally}
         rewind={true}
         keyboard={true}
-        onSlideChange={() => console.log('slide change')}
-        onSwiper={(swiper) => console.log(swiper)}
         >
         {slides}
       </Swiper>
