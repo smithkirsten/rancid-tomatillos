@@ -86,8 +86,6 @@ const Slider = (props) => {
         a11y={ally}
         rewind={true}
         keyboard={true}
-        onSlideChange={() => console.log('slide change')}
-        onSwiper={(swiper) => console.log(swiper)}
         >
         {slides}
       </Swiper>
