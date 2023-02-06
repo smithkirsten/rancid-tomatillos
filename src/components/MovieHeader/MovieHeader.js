@@ -19,7 +19,6 @@ const MovieHeader = (props) => {
       <div className='genres-back-button-section'>
         <Link to="/main" ><button className='back-to-main-button' onClick={props.backToMain}>Back to All Movies</button>
         </Link>
-        {/* <Link to='/main' onClick={props.backToMain} >Back to All Movies</Link> */}
         <div className='deets genres'>
           <p>{genres}</p>
         </div>
