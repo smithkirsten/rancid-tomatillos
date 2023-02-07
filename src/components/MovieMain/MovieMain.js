@@ -6,13 +6,11 @@ import Slider from '../Slider/Slider'
 const MovieMain = (props) => {
   const { title, tagline, release_date, poster_path, overview, budget, revenue } = props.movie
   const { videos } = props
-  console.log(budget, revenue)
-
   return (
     <section className="movie-info">
       <div className="overview-area">
         <div className='poster-section'>
-          <img className= "poster" src={poster_path} alt={title}/>
+          <img className="poster" src={poster_path} alt={title} />
           <div>
             <p className="tagline">{tagline}</p>
             <p className="movie-date">Released {dayjs(release_date).format('MMM D, YYYY')}</p>
@@ -22,9 +20,9 @@ const MovieMain = (props) => {
         <div className="money-matters">
           {revenue !== 0 && (<p><strong>Revenue:</strong> {'$' + Intl.NumberFormat().format(budget)}</p>)}
           {budget !== 0 && (<p><strong>Budget:</strong> {'$' + Intl.NumberFormat().format(revenue)}</p>)}
+        </div>
       </div>
-      </div>
-      <Slider videos={videos}/>
+      <Slider videos={videos} />
     </section>
   )
 }
