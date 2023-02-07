@@ -41,25 +41,25 @@ class App extends Component {
     //   .slice(0, 10)
   }
 
-  determineRender = ({ error, movies, selectedMovie }) => {
-    if (error) {
-      return (<p>error</p>)
-      // <Route path="error" element={<Error />}/>
-    }
-    if (selectedMovie) {
-      console.log('movie selected: ', selectedMovie)
-      return (
-        <MovieDetails backToMain={this.backToMain} movieId={this.state.selectedMovie} />
-      )
-    }
-    if (movies.length < 1) {
-      return (<p>loading...</p>)
-    } else {
-      return (
-        <MainPage movies={this.state.movies} worstMovies={this.findWorstMovies()} selectMovie={this.selectMovie} />
-      )
-    }
-  }
+  // determineRender = ({ error, movies, selectedMovie }) => {
+  //   if (error) {
+  //     return (<p>error</p>)
+  //     // <Route path="error" element={<Error />}/>
+  //   }
+  //   if (selectedMovie) {
+  //     console.log('movie selected: ', selectedMovie)
+  //     return (
+  //       <MovieDetails backToMain={this.backToMain} movieId={this.state.selectedMovie} />
+  //     )
+  //   }
+  //   if (movies.length < 1) {
+  //     return (<p>loading...</p>)
+  //   } else {
+  //     return (
+  //       <MainPage movies={this.state.movies} worstMovies={this.findWorstMovies()} selectMovie={this.selectMovie} />
+  //     )
+  //   }
+  // }
 
   render() {
     return (
@@ -67,8 +67,8 @@ class App extends Component {
         {/* {this.determineRender(this.state)} */}
         {/* <Route path='movie/:id' component={MovieDetails} ></Route> */}
         {/* <Route path='/main' component={MainPage} ></Route> */}
-        <Route exact path='/movie/:id' render={() => <MovieDetails backToMain={this.backToMain} movieId={this.state.selectedMovie} />} ></Route>
-        <Route exact path='/' render={() => <MainPage movies={this.findWorstMovies()[1]} worstMovies={this.findWorstMovies()[0]} selectMovie={this.selectMovie} />} ></Route>
+        {this.state.selectedMovie && <Route exact path='/movie/:id' render={() => <MovieDetails backToMain={this.backToMain} movieId={this.state.selectedMovie} />} ></Route> }
+        { this.state.movies.length > 0 && <Route exact path='/' render={() => <MainPage movies={this.findWorstMovies()[1]} worstMovies={this.findWorstMovies()[0]} selectMovie={this.selectMovie} />} ></Route> }
       </>
       // Home page work path to '/main' or else it won't load correctly
     )
