@@ -12,30 +12,25 @@ class MovieDetails extends Component {
       error: ''
     }
   }
-  //props are: movie id and backToMain function
 
-  displayMovie = async(prevState) => {
-    if(!prevState || prevState.movie.id !== this.state.movie.id) {
-      const movieDeets = await apiCalls.getMovies('movies', this.props.movieId)
-      const videos = await apiCalls.getMovies('videos', this.props.movieId)
+  displayMovie = async(id) => {
+      const movieDeets = await apiCalls.getMovies('movies', id)
+      const videos = await apiCalls.getMovies('videos', id)
       this.setState({ movie: movieDeets.movie, videos: videos.videos })
     }
-  }
+  
   componentDidMount = async() => {
-    await this.displayMovie()
+    const id = this.props.match.params.id
+    await this.displayMovie(id)
   }
 
-  componentDidUpdate = async(prevProps, prevState) => {
-    //ask if state has changed and if it has, re-render
-    await this.displayMovie(prevState)
-  }
-
-
-  render(props) {
-    console.log(this.props)
+  render() {
+    if(this.state.videos < 1 || this.state.movies < 1) {
+      return <p>loading</p>
+    }
     return (
       <main className="App">
-        <MovieHeader backToMain={this.props.backToMain} movie={this.state.movie}/>
+        <MovieHeader movie={this.state.movie}/>
         <MovieMain movie={this.state.movie} videos={this.state.videos}/>
       </main>
     )

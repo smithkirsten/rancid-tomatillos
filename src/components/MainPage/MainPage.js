@@ -5,15 +5,19 @@ import './MainPage.css'
 
 const MainPage = ({ movies, worstMovies, selectMovie }) => {
   console.log(movies, worstMovies)
+    //conditionally render loading component from here
+  if (movies.length < 1) {
+    return <p>loading</p>
+  }
 
   return (
     <main className='App'>
       <Header />
-      <section className="movies-display">
+        <section className="movies-display">
         <h2>Worst Rated Movie</h2>
-        <Slider movies={worstMovies} scroll={false} selectMovie={selectMovie} />
+        <Slider movies={worstMovies} scroll={false} />
         <h2>All Movies</h2>
-        <Slider movies={movies} scroll={true} selectMovie={selectMovie} />
+        <Slider movies={movies} scroll={true} />
       </section>
     </main>
   )
