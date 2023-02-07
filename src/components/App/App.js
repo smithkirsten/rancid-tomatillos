@@ -15,11 +15,11 @@ class App extends Component {
     }
   }
 
-  componentDidMount = async () => {
+  componentDidMount = async () => {//added a sort so that movies are sorted by rating as soon as they are fetched
     const data = await apiCalls.getMovies('movies')
     console.log(data)
     data.movies ?
-      this.setState({ movies: data.movies }) :
+      this.setState({ movies: data.movies.sort((a, b) => a.average_rating - b.average_rating) }) :
       this.setState({ error: data.error })
   }
 
@@ -33,9 +33,12 @@ class App extends Component {
   }
 
   findWorstMovies = () => {
-    return this.state.movies
-      .sort((a, b) => a.average_rating - b.average_rating)
-      .slice(0, 10)
+    
+    return [this.state.movies.slice(0, 9), this.state.movies.slice(10)]
+
+    // return this.state.movies
+    //   .sort((a, b) => a.average_rating - b.average_rating)
+    //   .slice(0, 10)
   }
 
   determineRender = ({ error, movies, selectedMovie }) => {
@@ -65,7 +68,7 @@ class App extends Component {
         {/* <Route path='movie/:id' component={MovieDetails} ></Route> */}
         {/* <Route path='/main' component={MainPage} ></Route> */}
         <Route exact path='/movie/:id' render={() => <MovieDetails backToMain={this.backToMain} movieId={this.state.selectedMovie} />} ></Route>
-        <Route exact path='/' render={() => <MainPage movies={this.state.movies} worstMovies={this.findWorstMovies()} selectMovie={this.selectMovie} />} ></Route>
+        <Route exact path='/' render={() => <MainPage movies={this.findWorstMovies()[1]} worstMovies={this.findWorstMovies()[0]} selectMovie={this.selectMovie} />} ></Route>
       </>
       // Home page work path to '/main' or else it won't load correctly
     )

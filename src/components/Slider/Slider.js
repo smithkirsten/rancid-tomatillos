@@ -41,7 +41,7 @@ const buildDummySlides = () => {
 const buildMovieSlides = (movies, selectMovie) => {
   return movies.map(movie => {
     const aria = `Click to view details for ${movie.title}`
-
+    console.log(movie.id)
     return (
         <SwiperSlide className="slide" key={movie.id}><Link to={"/movie/" + movie.id} ><button onClick={() => selectMovie(movie.id)} id={movie.id}><img className='poster-image' aria-label={aria} src={movie.poster_path} alt={movie.title} /></button></Link></SwiperSlide>
     )
@@ -54,6 +54,7 @@ const buildABear = ({ movies, selectMovie, videos }) => {
   }
 
   if(movies.length > 0) {
+    console.log('how many movies are in this array? ', movies.length)
     return buildMovieSlides(movies, selectMovie)
     
   } else {
@@ -74,6 +75,7 @@ const Slider = (props) => {
     enabled: true,
     lastSlideMessage: "This is the last slide",
   }
+  console.log(slides)
   return (
     <div>
       <h2 className='section-title'>{props.sectionTitle}</h2>
@@ -84,9 +86,9 @@ const Slider = (props) => {
         slidesPerView={perView}
         navigation={true}
         direction='horizontal'
-        // autoplay={scroll}
+        autoplay={scroll}
         a11y={ally}
-        // rewind={true}
+        rewind={true}
         keyboard={true}
         >
         {slides}
