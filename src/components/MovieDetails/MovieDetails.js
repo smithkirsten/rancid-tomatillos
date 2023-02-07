@@ -1,4 +1,3 @@
-import './MovieDetails.css'
 import React, { Component } from 'react'
 import MovieHeader from '../MovieHeader/MovieHeader'
 import MovieMain from '../MovieMain/MovieMain'

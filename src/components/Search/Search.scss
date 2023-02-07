@@ -1,14 +1,14 @@
-input {
+.search-container > input {
   height: 4vh;
   width: 100%;
   border: none;
 }
 
+.search-container > label {
+  display: none;
+}
+
 .search-container {
   margin-right: 10px;
   margin-bottom: 5px;
-}
-
-label {
-  display: none;
 }

@@ -1,9 +1,6 @@
-* {
+.movie-info {
   font-family: "Source Sans Pro", sans-serif;
   font-size: 14px;
-}
-
-.movie-info {
   display: flex;
   flex-direction: row;
   height: 50vh;
@@ -16,7 +13,8 @@
   margin: 20px;
 }
 
-.summary, .tagline {
+.summary,
+.tagline {
   margin: 0 0 0 15px;
 }
 
