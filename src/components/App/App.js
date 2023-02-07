@@ -4,7 +4,7 @@ import MainPage from '../MainPage/MainPage'
 import Error from '../Error/Error'
 import apiCalls from '../../apiCalls'
 import './App.css';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
 
 class App extends Component {
   constructor() {
@@ -30,12 +30,16 @@ class App extends Component {
 
   render() {
     //add conditional rendering for error and loading
-    return (
+    
+    return this.state.error ?
+    ( <Route path='/error' render={() => <Error error="error" />} ></Route> ) :
+    (
       <>
       <Switch>
         <Route exact path='/movie/:id' render={(props) => <MovieDetails {...props}/>} ></Route>
         <Route exact path='/' render={() => <MainPage movies={this.findWorstMovies()[1]} worstMovies={this.findWorstMovies()[0]} selectMovie={this.selectMovie} />} ></Route>
-        <Route path='*' render={() => <Error error="error" />} ></Route>
+        <Route path='/error' render={() => <Error error={this.state.error} />} ></Route>
+        <Redirect to='/error'/>
       </Switch>
       </>
     )
