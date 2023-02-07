@@ -7,7 +7,7 @@ const Error = ({ error }) => {
   console.log(error)
   return (
     <main className="App">
-      <Header />
+      <Header error={error} />
       <section className="error-page">
         <div className="error-display">
           <h2>Whoops! We couldn't find what you're looking for</h2>
