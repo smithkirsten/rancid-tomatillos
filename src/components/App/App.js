@@ -57,17 +57,17 @@ class App extends Component {
       )
     }
   }
-  
+
   render() {
     return (
-      <BrowserRouter >
-        {this.determineRender(this.state)}
-        <Switch>
-          <Route path='movie/:id' component={MovieDetails} />
-          <Route path='/main' component={MainPage} /> 
-          // Home page work path to '/main' or else it won't load correctly
-        </Switch>
-      </BrowserRouter>
+      <>
+        {/* {this.determineRender(this.state)} */}
+        {/* <Route path='movie/:id' component={MovieDetails} ></Route> */}
+        {/* <Route path='/main' component={MainPage} ></Route> */}
+        <Route exact path='/movie/:id' render={() => <MovieDetails backToMain={this.backToMain} movieId={this.state.selectedMovie} />} ></Route>
+        <Route exact path='/' render={() => <MainPage movies={this.state.movies} worstMovies={this.findWorstMovies()} selectMovie={this.selectMovie} />} ></Route>
+      </>
+      // Home page work path to '/main' or else it won't load correctly
     )
   }
 }
