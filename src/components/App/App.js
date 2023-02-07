@@ -62,15 +62,12 @@ class App extends Component {
   // }
 
   render() {
+    //add conditional rendering for error and loading
     return (
       <>
-        {/* {this.determineRender(this.state)} */}
-        {/* <Route path='movie/:id' component={MovieDetails} ></Route> */}
-        {/* <Route path='/main' component={MainPage} ></Route> */}
         {this.state.selectedMovie && <Route exact path='/movie/:id' render={() => <MovieDetails backToMain={this.backToMain} movieId={this.state.selectedMovie} />} ></Route> }
         { this.state.movies.length > 0 && <Route exact path='/' render={() => <MainPage movies={this.findWorstMovies()[1]} worstMovies={this.findWorstMovies()[0]} selectMovie={this.selectMovie} />} ></Route> }
       </>
-      // Home page work path to '/main' or else it won't load correctly
     )
   }
 }
