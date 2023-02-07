@@ -1,6 +1,7 @@
 import React from 'react'
 import Header from '../Header/Header'
 import Slider from '../Slider/Slider'
+import './MainPage.css'
 
 const MainPage = ({ movies, worstMovies, selectMovie }) => {
   console.log(movies, worstMovies)

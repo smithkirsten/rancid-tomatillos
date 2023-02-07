@@ -20,7 +20,7 @@ Swiper {
 .poster-image {
   height: 28vh;
   width: 12vw;
-  box-shadow: 0px 4px 4px 0;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
   cursor: pointer;
 }
 
