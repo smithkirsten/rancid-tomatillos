@@ -43,7 +43,7 @@ const buildMovieSlides = (movies, selectMovie) => {
     const aria = `Click to view details for ${movie.title}`
 
     return (
-        <SwiperSlide className="slide" key={movie.id}><Link to={"movie/" + movie.id} ><button onClick={() => selectMovie(movie.id)} id={movie.id}><img className='poster-image' aria-label={aria} src={movie.poster_path} alt={movie.title} /></button></Link></SwiperSlide>
+        <SwiperSlide className="slide" key={movie.id}><Link to={"/movie/" + movie.id} ><button onClick={() => selectMovie(movie.id)} id={movie.id}><img className='poster-image' aria-label={aria} src={movie.poster_path} alt={movie.title} /></button></Link></SwiperSlide>
     )
   }) 
 }
@@ -84,9 +84,9 @@ const Slider = (props) => {
         slidesPerView={perView}
         navigation={true}
         direction='horizontal'
-        autoplay={scroll}
+        // autoplay={scroll}
         a11y={ally}
-        rewind={true}
+        // rewind={true}
         keyboard={true}
         >
         {slides}
