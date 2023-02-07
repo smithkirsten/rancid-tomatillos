@@ -1,3 +1,18 @@
+@use "../../abstracts/index.scss" as *;
+
+.error-page {
+  height: 75vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .error-display {
-  
+  @include creamBackground;
+  text-align: center;
+  padding: 20px;
+}
+
+.broken-image {
+  height: 40vh;
 }
