@@ -1,7 +1,5 @@
 @use "../../abstracts/index.scss" as *;
 
-
-
 Swiper {
   height: 30vh;
   width: 90vw;
@@ -13,14 +11,10 @@ Swiper {
   //the videos do better in pixels but that isn't very responsive...
   height: 340px;
   width: 600px;
+  margin-bottom: 10px;
 }
 
 .swiper-wrapper {
-  margin: 20px;
-}
-
-.section-title {
-  font-family: $headerFont;
   margin: 20px;
 }
 
@@ -31,7 +25,8 @@ Swiper {
 .poster-image {
   height: 28vh;
   width: 12vw;
-  box-shadow: 0px 4px 4px 0;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
 }
 
 button {

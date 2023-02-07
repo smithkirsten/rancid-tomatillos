@@ -76,7 +76,6 @@ const Slider = (props) => {
   }
   return (
     <div>
-      <h2 className='section-title'>{props.sectionTitle}</h2>
       <Swiper
         className={type}
         spaceBetween={50}
