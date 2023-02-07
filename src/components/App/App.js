@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import MovieDetails from '../MovieDetails/MovieDetails'
 import MainPage from '../MainPage/MainPage'
+import Error from '../Error/Error'
 import apiCalls from '../../apiCalls'
 import './App.css';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
@@ -34,6 +35,7 @@ class App extends Component {
       <Switch>
         <Route exact path='/movie/:id' render={(props) => <MovieDetails {...props}/>} ></Route>
         <Route exact path='/' render={() => <MainPage movies={this.findWorstMovies()[1]} worstMovies={this.findWorstMovies()[0]} selectMovie={this.selectMovie} />} ></Route>
+        <Route path='*' render={() => <Error error="error" />} ></Route>
       </Switch>
       </>
     )
