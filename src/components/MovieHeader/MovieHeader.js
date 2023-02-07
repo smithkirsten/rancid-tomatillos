@@ -7,12 +7,7 @@ const MovieHeader = (props) => {
   const movieHours = runtime / 60
   const movieMinutes = (movieHours - Math.floor(movieHours)) * 60
   const formattedTime = `${Math.floor(movieHours)} hrs ${Math.abs(Math.floor(movieMinutes))} mins`
-  
-  
-  // const formattedGenre = genres.length > 1 ? genres.join(', ') : genres
-
-  // console.log(genres)
-  // console.log(formattedGenre)
+  const formattedGenres = genres.length > 1 ? genres.join(' | ') : genres
   return (
     <nav className="movie-header" style={{ backgroundImage: `url(${backdrop_path})` }}>
       <div className='header-details'>
@@ -25,7 +20,7 @@ const MovieHeader = (props) => {
         <button className='back-to-main-button' onClick={props.backToMain}>Back to All Movies</button>
         </Link>
         <div className='deets genres'>
-          <p>{genres}</p>
+          <p>{formattedGenres}</p>
         </div>
       </div>
     </nav>
