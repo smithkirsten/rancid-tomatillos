@@ -20,8 +20,8 @@ const MovieMain = (props) => {
           </div>
         </div>
         <div className="money-matters">
-          {revenue !== 0 && (<p><strong>Revenue:</strong> {budget}</p>)}
-          {budget !== 0 && (<p><strong>Budget:</strong> {revenue}</p>)}
+          {revenue !== 0 && (<p><strong>Revenue:</strong> {'$' + Intl.NumberFormat().format(budget)}</p>)}
+          {budget !== 0 && (<p><strong>Budget:</strong> {'$' + Intl.NumberFormat().format(revenue)}</p>)}
       </div>
       </div>
       <Slider videos={videos}/>
