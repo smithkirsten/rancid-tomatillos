@@ -16,5 +16,14 @@ describe('Main Page', () => {
     cy.get('.logo').should('be.visible')
   })
   
+  it('Should have a search bar for movies', () => {
+    cy.get('#searchBar').should('be.visible')
+  })
+  
+  // it('Should be able to search for movies', () => {
+      // cy.get('#searchBar').type('The woman King').click().url('/movie/724495')
+  // })
+
+ 
   
 })
