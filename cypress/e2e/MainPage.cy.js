@@ -9,7 +9,7 @@ describe('Main Page', () => {
   // }) 
 
   it('Should see the title of the application', () => {
-    cy.get('.App').contains('Rancid')
+    cy.get('.App').contains('Rancid Tomatillos')
   })
 
   it('Should see the logo', () => {
@@ -41,5 +41,4 @@ describe('Main Page', () => {
     cy.get('#724495').click() 
     cy.url().should('eq', 'http://localhost:3000/movie/724495')
   })
-  
 })
