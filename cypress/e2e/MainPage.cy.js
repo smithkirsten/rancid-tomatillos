@@ -37,5 +37,9 @@ describe('Main Page', () => {
     cy.get('.movies-display').contains('All Movies')
   })
 
+  it('Should be able to see the movies display of the click of a poster', () => {
+    cy.get('#724495').click() 
+    cy.url().should('eq', 'http://localhost:3000/movie/724495')
+  })
   
 })
