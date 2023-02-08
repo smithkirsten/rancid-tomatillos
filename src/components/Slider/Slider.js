@@ -42,7 +42,7 @@ const buildMovieSlides = (movies) => {
   return movies.map(movie => {
     const aria = `Click to view details for ${movie.title}`
     return (
-        <SwiperSlide className="slide" key={movie.id}><Link to={"/movie/" + movie.id} ><img className='poster-image' aria-label={aria} src={movie.poster_path} alt={movie.title} /></Link></SwiperSlide>
+        <SwiperSlide className="slide" id={movie.id} key={movie.id}><Link to={"/movie/" + movie.id} ><img className='poster-image' aria-label={aria} src={movie.poster_path} alt={movie.title} /></Link></SwiperSlide>
     )
   }) 
 }

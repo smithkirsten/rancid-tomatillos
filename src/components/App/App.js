@@ -23,7 +23,7 @@ class App extends Component {
   }
 
   findWorstMovies = () => {
-    return [this.state.movies.slice(0, 9), this.state.movies.slice(10)]
+    return [this.state.movies.slice(0, 10), this.state.movies.slice(10)]
 
   }
 
