@@ -18,16 +18,20 @@ Swiper {
   margin: 20px;
 }
 
-.slide, .loading-card  {
-  background-color: $darkGrey;
+.slide {
   height: 28vh;
 }
 
-.poster-image {
+.poster-image, .loading-card {
   height: 28vh;
   width: 12vw;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
   cursor: pointer;
+}
+
+.loading-card {
+  background-color: $darkGrey;
+  cursor: none;
 }
 
 // button {
