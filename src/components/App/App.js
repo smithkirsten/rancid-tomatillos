@@ -23,7 +23,7 @@ class App extends Component {
   }
 
   findWorstMovies = () => {
-    return [this.state.movies.slice(0, 9), this.state.movies.slice(10)]
+    return [this.state.movies.slice(0, 10), this.state.movies.slice(10)]
 
   }
 
@@ -33,7 +33,7 @@ class App extends Component {
       <>
       <Switch>
         <Route exact path='/movie/:id' render={(props) => <MovieDetails {...props}/>} ></Route>
-        <Route exact path='/' render={() => <MainPage movies={this.findWorstMovies()[1]} worstMovies={this.findWorstMovies()[0]} selectMovie={this.selectMovie} />} ></Route>
+        <Route exact path='/' render={() => <MainPage movies={this.findWorstMovies()[1]} worstMovies={this.findWorstMovies()[0]} />} ></Route>
       </Switch>
       </>
     )
