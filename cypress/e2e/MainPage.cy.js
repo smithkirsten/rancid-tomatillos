@@ -28,5 +28,14 @@ describe('Main Page', () => {
     cy.get('.slide').should('have.length', 11)
   })
 
+  it('Should have two Swiper slides', () => {
+    cy.get('.poster-swiper').should('have.length', 2)
+  })
+  
+  it('Should have section titles', () => {
+    cy.get('.movies-display').contains('Worst Rated Movie')
+    cy.get('.movies-display').contains('All Movies')
+  })
+
   
 })
