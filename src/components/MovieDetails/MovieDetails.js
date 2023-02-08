@@ -26,9 +26,6 @@ class MovieDetails extends Component {
   }
 
   render() {
-    console.log(this.props)
-    console.log(this.props.match.params.id)
-    console.log(this.props.allMovies)
     if(this.state.videos < 1 || this.state.movies < 1) {
       return <p>loading</p>
     }
