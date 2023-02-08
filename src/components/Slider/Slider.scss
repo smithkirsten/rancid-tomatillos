@@ -31,6 +31,7 @@ Swiper {
 
 .loading-card {
   background-color: $darkGrey;
+  background: radial-gradient(circle, rgba(255,255,240,1) 0%, rgba(74,88,96,1) 87%);
   cursor: none;
 }
 
