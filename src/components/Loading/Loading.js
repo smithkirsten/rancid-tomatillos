@@ -15,8 +15,6 @@ const Loading = ({ allMovies }) => {
           <Slider />
         </section>
       </main>
-
-  
     )
   }
   return (
