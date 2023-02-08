@@ -1,1 +1,20 @@
-/*# sourceMappingURL=Error.css.map */
+.error-page {
+  height: 75vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.error-display {
+  color: rgb(74, 88, 96);
+  background-color: rgb(255, 255, 240);
+  margin: 15px;
+  border-radius: 8px;
+  padding: 5px;
+  text-align: center;
+  padding: 20px;
+}
+
+.broken-image {
+  height: 40vh;
+}/*# sourceMappingURL=Error.css.map */
