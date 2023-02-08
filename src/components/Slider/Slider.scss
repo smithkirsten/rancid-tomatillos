@@ -22,17 +22,23 @@ Swiper {
   height: 28vh;
 }
 
-.poster-image {
+.poster-image, .loading-card {
   height: 28vh;
   width: 12vw;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
   cursor: pointer;
 }
 
-button {
-  border: none;
-  background-color: rgb(35, 34, 37);
+.loading-card {
+  background-color: $darkGrey;
+  background: radial-gradient(circle, rgba(255,255,240,1) 0%, rgba(74,88,96,1) 87%);
+  cursor: none;
 }
+
+// button {
+//   border: none;
+//   background-color: rgb(35, 34, 37);
+// }
 
 :root {
   --swiper-navigation-color: rgb(255, 255, 240);

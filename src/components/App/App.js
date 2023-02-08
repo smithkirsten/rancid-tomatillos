@@ -28,11 +28,12 @@ class App extends Component {
   }
 
   render() {
+    //do we need exact here now that it's in a switch?
     return (
       <>
       <Switch>
-        <Route exact path='/movie/:id' render={(props) => <MovieDetails {...props} allMovies={this.state.movies}/>} ></Route>
         <Route exact path='/' render={() => <MainPage movies={this.findWorstMovies()[1]} worstMovies={this.findWorstMovies()[0]} error={this.state.error} />} ></Route>
+        <Route exact path='/movie/:id' render={(props) => <MovieDetails {...props} allMovies={this.state.movies}/>} ></Route>
         <Route path='/error' render={() => <Error error={this.state.error} />} ></Route>
         <Redirect to='/error'/>
       </Switch>

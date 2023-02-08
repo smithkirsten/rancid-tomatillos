@@ -30,15 +30,15 @@ const buildVideoSlides = (videos) => {
 
 const buildDummySlides = () => {
   let slides = []
-  for (let i = 0; i < 50; i++) {
+  for (let i = 0; i < 11; i++) {
     slides.push((
-      <SwiperSlide className="slide" key={Date.now()}><div className="loading-card"></div></SwiperSlide>
+      <SwiperSlide className="slide loading-card" key={`dummy${i}`}><div className="loading-card"></div></SwiperSlide>
     ))
   }
   return slides
 }
 
-const buildMovieSlides = (movies, selectMovie) => {
+const buildMovieSlides = (movies) => {
   return movies.map(movie => {
     const aria = `Click to view details for ${movie.title}`
     return (
@@ -47,18 +47,16 @@ const buildMovieSlides = (movies, selectMovie) => {
   }) 
 }
 
-const buildABear = ({ movies, selectMovie, videos }) => {
+const buildABear = ({ movies, videos }) => {
   if(videos) {
     return buildVideoSlides(videos)
   }
 
-  if(movies.length > 0) {
-    return buildMovieSlides(movies, selectMovie)
+  if(movies) {
+    return buildMovieSlides(movies)
     
   } else {
     return buildDummySlides()
-    //style loading-card and set scroll to be true is movies.length < 0
-      //slider will auto scroll through blank cards while the movies load
   }
 }
 
