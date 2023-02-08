@@ -12,4 +12,9 @@ describe('Main Page', () => {
     cy.get('.App').contains('Rancid')
   })
 
+  it('Should see the logo', () => {
+    cy.get('.logo').should('be.visible')
+  })
+  
+  
 })
