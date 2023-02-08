@@ -5,7 +5,7 @@ import Slider from '../Slider/Slider'
 
 //if loading MainPage, load dummy slides
 //if loading MovieDetails, load spinner
-const Loading = () => {
+const Loading = ({ allMovies }) => {
   return (
     <main className='App'>
       <Header error='loading' />
