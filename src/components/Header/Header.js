@@ -4,14 +4,14 @@ import './Header.css'
 import tomatillo from "../../assets/cream-toma.png"
 
 
-const Header = () => {
+const Header = (props) => {
   return (
     <nav className="Header">
       <div className="logo">
         <img src={tomatillo} alt='Tomatillo Logo' className="tomatillo"/>
         <h1 className="title">Rancid <br/> Tomatillos</h1>
       </div>
-      <Search />
+      {!props.error && <Search />}
     </nav>
   )
 }

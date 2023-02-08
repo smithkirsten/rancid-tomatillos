@@ -1,18 +1,23 @@
 import React from 'react'
+import Error from '../Error/Error'
 import Header from '../Header/Header'
 import Slider from '../Slider/Slider'
+import Loading from '../Loading/Loading'
 import './MainPage.css'
 
-const MainPage = ({ movies, worstMovies, selectMovie }) => {
-  console.log(movies, worstMovies)
-    //conditionally render loading component from here
+const MainPage = ({ movies, worstMovies, error }) => {
+
   if (movies.length < 1) {
-    return <p className='loading'>loading</p>
+    return <Loading allMovies={true} />
+  }
+
+  if (error) {
+    return (<Error error={error} />)
   }
 
   return (
     <main className='App'>
-      <Header />
+      <Header error={error}/>
         <section className="movies-display">
         <h2>Worst Rated Movie</h2>
         <Slider movies={worstMovies} scroll={false} />

@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import MovieHeader from '../MovieHeader/MovieHeader'
 import MovieMain from '../MovieMain/MovieMain'
+import Error from '../Error/Error'
+import Loading from '../Loading/Loading'
 import apiCalls from '../../apiCalls'
 
 class MovieDetails extends Component {
@@ -26,8 +28,13 @@ class MovieDetails extends Component {
 
   render() {
     if(this.state.videos < 1 || this.state.movies < 1) {
-      return <p>loading</p>
+      return <Loading error='loading' />
     }
+
+    if(!this.props.allMovies.find(movie => movie.id === +this.props.match.params.id)) {
+      return (<Error error='no such movie id' />)
+    }
+
     return (
       <main className="App">
         <MovieHeader movie={this.state.movie}/>
