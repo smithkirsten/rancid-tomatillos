@@ -15,7 +15,7 @@ class App extends Component {
     }
   }
 
-  componentDidMount = async () => {//added a sort so that movies are sorted by rating as soon as they are fetched
+  componentDidMount = async () => {
     const data = await apiCalls.getMovies('movies')
     data.movies ?
       this.setState({ movies: data.movies.sort((a, b) => a.average_rating - b.average_rating) }) :
@@ -31,7 +31,7 @@ class App extends Component {
     return (
       <>
       <Switch>
-        <Route exact path='/movie/:id' render={(props) => <MovieDetails {...props}/>} ></Route>
+        <Route exact path='/movie/:id' render={(props) => <MovieDetails {...props} allMovies={this.state.movies}/>} ></Route>
         <Route exact path='/' render={() => <MainPage movies={this.findWorstMovies()[1]} worstMovies={this.findWorstMovies()[0]} error={this.state.error} />} ></Route>
         <Route path='/error' render={() => <Error error={this.state.error} />} ></Route>
         <Redirect to='/error'/>
