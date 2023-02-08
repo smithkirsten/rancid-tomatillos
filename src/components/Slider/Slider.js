@@ -32,7 +32,7 @@ const buildDummySlides = () => {
   let slides = []
   for (let i = 0; i < 11; i++) {
     slides.push((
-      <SwiperSlide className="slide" key={`dummy${i}`}><div className="loading-card"></div></SwiperSlide>
+      <SwiperSlide className="slide loading-card" key={`dummy${i}`}><div className="loading-card"></div></SwiperSlide>
     ))
   }
   return slides
