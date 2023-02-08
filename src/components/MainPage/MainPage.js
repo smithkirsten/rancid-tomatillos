@@ -7,7 +7,7 @@ const MainPage = ({ movies, worstMovies, selectMovie }) => {
   console.log(movies, worstMovies)
     //conditionally render loading component from here
   if (movies.length < 1) {
-    return <p>loading</p>
+    return <p className='loading'>loading</p>
   }
 
   return (
