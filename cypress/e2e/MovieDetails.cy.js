@@ -61,14 +61,21 @@ describe('Movie Details Page', () => {
     cy.get('.overview-area').contains('The story of the Agojie,')
   })
 
-  it('Should ', () => {
-    cy.get('MovieMain')
+  it('Should hide the main page', () => {
+    cy.get('.movies-display').should('not.exist')
   })
 
-  // Mainpage should NOT be visible 
-  // Revenue & budget
+  it('Should have a back button', () => {
+    cy.get('.back-to-main-button').should('be.visible')
+  })
+
+  it('Should have a revenue and budget', () => {
+    cy.get('.money-matters').contains('Revenue: $50,000,000')
+    cy.get('.money-matters').contains('Budget: $91,000,000')
+  }
+  )
+
   // Video Swiper
-  // Button - be visibile
   // Button - should change url
 
   /////////
