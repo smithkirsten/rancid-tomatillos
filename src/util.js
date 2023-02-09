@@ -14,6 +14,10 @@ const scrubbingBubbles = (data, destination) => {
       .sort((a, b) => a.average_rating - b.average_rating)
   }
   const formattedGenres = !data.genres ? '' : data.genres.length > 1 ? data.genres.join(' | ') : data.genres
+  const movieHours = data.runtime / 60
+  const movieMinutes = (movieHours - Math.floor(movieHours)) * 60
+  const formattedTime = `${Math.floor(movieHours)} hrs ${Math.abs(Math.floor(movieMinutes))} mins`
+
   return {
     id: data.id,
     title: data.title,
@@ -24,7 +28,7 @@ const scrubbingBubbles = (data, destination) => {
     genres: formattedGenres,
     budget: data.budget || 'unavailable',
     revenue: data.revenue || 'unavailable',
-    runtime: data.runtime,
+    runtime: formattedTime,
     tagline: data.tagline,
     average_rating: data.average_rating
   }

@@ -13,7 +13,7 @@ const MovieHeader = (props) => {
       <div className='header-details'>
         <p className="deets movie-title">{title}</p>
         <p className="deets movie-rating">{average_rating}/10</p>
-        <p className="deets movie-runtime">{formattedTime}</p>
+        <p className="deets movie-runtime">{runtime}</p>
       </div>
       <div className='genres-back-button-section'>
         <Link to="/" ><button className='back-to-main-button' >Back to All Movies</button></Link>
