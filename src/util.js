@@ -14,8 +14,8 @@ const scrubbingBubbles = (data) => {
 
 const formatDollars = (raw) => {
   return raw === 'unavailable' ?
-    raw :
+    raw + ' for this film':
     '$' + Intl.NumberFormat().format(raw)
 }
 
-export { scrubbingBubbles }
+export { scrubbingBubbles, formatDollars }

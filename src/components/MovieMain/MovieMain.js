@@ -1,4 +1,5 @@
 import './MovieMain.css'
+import { formatDollars } from '../../util'
 import dayjs from 'dayjs'
 import React, { Component } from 'react'
 import Slider from '../Slider/Slider'
