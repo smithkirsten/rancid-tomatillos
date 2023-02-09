@@ -19,8 +19,8 @@ const MovieMain = (props) => {
           </div>
         </div>
         <div className="money-matters">
-          {revenue !== 0 && (<p><strong>Revenue:</strong> {budget}</p>)}
-          {budget !== 0 && (<p><strong>Budget:</strong> {revenue}</p>)}
+          <p><strong>Revenue:</strong> {budget}</p>
+          <p><strong>Budget:</strong> {revenue}</p>
         </div>
       </div>
       {!videos.length ? <div className='no-videos'>No trailers are available for this movie</div> : <Slider videos={videos} />}
