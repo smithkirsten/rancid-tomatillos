@@ -11,8 +11,11 @@
 }
 
 .logo {
+  color: $cream;
+  font-family: $headerFont;
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 
 .logo > h1, 
@@ -23,4 +26,8 @@
 
 .tomatillo {
   height: 15vh;
+}
+
+a:link, a:visited, a:hover, a:active { 
+  text-decoration: none; 
 }
