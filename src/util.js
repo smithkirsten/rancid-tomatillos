@@ -12,4 +12,10 @@ const scrubbingBubbles = (data) => {
   //change budget & revenue from 0 -> unavailable? but then we will have to mess with the conditional rendering
 }
 
+const formatDollars = (raw) => {
+  return raw === 'unavailable' ?
+    raw :
+    '$' + Intl.NumberFormat().format(raw)
+}
+
 export { scrubbingBubbles }
