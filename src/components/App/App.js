@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import MovieDetails from '../MovieDetails/MovieDetails'
 import MainPage from '../MainPage/MainPage'
 import Error from '../Error/Error'
-import apiCalls from '../../apiCalls'
+import { getMovies } from '../../apiCalls'
 import './App.css';
 import { Route, Switch, Redirect } from 'react-router-dom';
 
@@ -16,7 +16,7 @@ class App extends Component {
   }
 
   componentDidMount = async () => {
-    const data = await apiCalls.getMovies('movies')
+    const data = await getMovies('movies')
     data.movies ?
       this.setState({ movies: data.movies.sort((a, b) => a.average_rating - b.average_rating) }) :
       this.setState({ error: data.error })

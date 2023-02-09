@@ -11,7 +11,7 @@ Swiper {
   //the videos do better in pixels but that isn't very responsive...
   height: 340px;
   width: 600px;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 .swiper-wrapper {
@@ -22,7 +22,8 @@ Swiper {
   height: 28vh;
 }
 
-.poster-image, .loading-card {
+.poster-image,
+.loading-card {
   height: 28vh;
   width: 12vw;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
@@ -34,11 +35,6 @@ Swiper {
   background: radial-gradient(circle, rgba(255,255,240,1) 0%, rgba(74,88,96,1) 87%);
   cursor: none;
 }
-
-// button {
-//   border: none;
-//   background-color: rgb(35, 34, 37);
-// }
 
 :root {
   --swiper-navigation-color: rgb(255, 255, 240);

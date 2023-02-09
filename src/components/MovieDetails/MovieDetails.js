@@ -3,7 +3,7 @@ import MovieHeader from '../MovieHeader/MovieHeader'
 import MovieMain from '../MovieMain/MovieMain'
 import Error from '../Error/Error'
 import Loading from '../Loading/Loading'
-import apiCalls from '../../apiCalls'
+import { getMovies } from '../../apiCalls'
 
 class MovieDetails extends Component {
   constructor(props) {
@@ -16,8 +16,8 @@ class MovieDetails extends Component {
   }
 
   displayMovie = async(id) => {
-      const movieDeets = await apiCalls.getMovies('movies', id)
-      const videos = await apiCalls.getMovies('videos', id)
+      const movieDeets = await getMovies('movies', id)
+      const videos = await getMovies('videos', id)
       this.setState({ movie: movieDeets.movie, videos: videos.videos })
     }
   
@@ -27,7 +27,7 @@ class MovieDetails extends Component {
   }
 
   render() {
-    if(this.state.videos < 1 || this.state.movies < 1) {
+    if(this.state.movies < 1) {
       return <Loading error='loading' />
     }
 

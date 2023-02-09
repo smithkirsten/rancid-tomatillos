@@ -22,10 +22,11 @@ const MovieMain = (props) => {
           {budget !== 0 && (<p><strong>Budget:</strong> {'$' + Intl.NumberFormat().format(revenue)}</p>)}
         </div>
       </div>
-      <Slider videos={videos} />
+      {!videos.length ? <div className='no-videos'>No trailers are available for this movie</div> : <Slider videos={videos} />}
     </section>
   )
 }
 //should overview area be its own component?
 
 export default MovieMain
+
