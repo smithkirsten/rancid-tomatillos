@@ -20,7 +20,7 @@ const scrubbingBubbles = (data, destination) => {
     title: data.title,
     poster_path: data.poster_path,
     backdrop_path: data.backdrop_path,
-    release_date: data.release_date,
+    release_date: dayjs(data.release_date).format('MMM D, YYYY'),
     overview: data.overview,
     genres: data.genres,
     budget: data.budget || 'unavailable',
