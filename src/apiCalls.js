@@ -22,4 +22,4 @@ const getMovies = async(type, id) => {
   }
 }
 
-export default { getMovies }
+export { getMovies }
