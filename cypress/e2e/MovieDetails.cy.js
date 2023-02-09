@@ -61,6 +61,10 @@ describe('Movie Details Page', () => {
     cy.get('.overview-area').contains('The story of the Agojie,')
   })
 
+  it('Should ', () => {
+    cy.get('MovieMain')
+  })
+
   // Mainpage should NOT be visible 
   // Revenue & budget
   // Video Swiper
