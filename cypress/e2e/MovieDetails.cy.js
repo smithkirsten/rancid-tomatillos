@@ -72,12 +72,16 @@ describe('Movie Details Page', () => {
   it('Should have a revenue and budget', () => {
     cy.get('.money-matters').contains('Revenue: $50,000,000')
     cy.get('.money-matters').contains('Budget: $91,000,000')
-  }
-  )
+  })
 
-  // Video Swiper
-  // Button - should change url
-
+  it('Should take the user back to the main page with the click of the back button', () => {
+    cy.get('.back-to-main-button').click()
+    cy.url().should('eq', 'http://localhost:3000/')
+  })
+  
+  it('Should contain a Swiper of videos', () => {
+    cy.get('.video-slide').should('have.length', 18)
+  })
   /////////
   // Error page
   // Loading page
