@@ -19,15 +19,17 @@ const MovieMain = (props) => {
           </div>
         </div>
         <div className="money-matters">
-          {revenue !== 0 && (<p><strong>Revenue:</strong> {'$' + Intl.NumberFormat().format(budget)}</p>)}
-          {budget !== 0 && (<p><strong>Budget:</strong> {'$' + Intl.NumberFormat().format(revenue)}</p>)}
+          {revenue !== 0 && (<p><strong>Revenue:</strong> {budget}</p>)}
+          {budget !== 0 && (<p><strong>Budget:</strong> {revenue}</p>)}
         </div>
       </div>
       {!videos.length ? <div className='no-videos'>No trailers are available for this movie</div> : <Slider videos={videos} />}
     </section>
   )
 }
-//should overview area be its own component?
 
 export default MovieMain
+
+// {revenue !== 0 && (<p><strong>Revenue:</strong> {'$' + Intl.NumberFormat().format(budget)}</p>)}
+// {budget !== 0 && (<p><strong>Budget:</strong> {'$' + Intl.NumberFormat().format(revenue)}</p>)}
 

@@ -19,7 +19,7 @@ class MovieDetails extends Component {
   displayMovie = async(id) => {
       const movieDeets = await getMovies('movies', id)
       const videos = await getMovies('videos', id)
-      this.setState({ movie: movieDeets.movie, videos: videos.videos })
+      this.setState({ movie: scrubbingBubbles(movieDeets.movie, 'details'), videos: videos.videos })
     }
   
   componentDidMount = async() => {

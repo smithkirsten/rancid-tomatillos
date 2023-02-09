@@ -1,6 +1,8 @@
+import dayjs from 'dayjs'
+
 const scrubbingBubbles = (data, destination) => {
   if(destination === 'main') {
-    return movies = data
+    return data
       .map(movie => {
         return {
           id: movie.id,
@@ -11,10 +13,22 @@ const scrubbingBubbles = (data, destination) => {
       })
       .sort((a, b) => a.average_rating - b.average_rating)
   }
+  //import day.js here and format date in cleaner
+  //format genres in cleaner?
   return {
-    
+    id: data.id,
+    title: data.title,
+    poster_path: data.poster_path,
+    backdrop_path: data.backdrop_path,
+    release_date: data.release_date,
+    overview: data.overview,
+    genres: data.genres,
+    budget: data.budget || 'unavailable',
+    revenue: data.revenue || 'unavailable',
+    runtime: data.runtime,
+    tagline: data.tagline,
+    average_rating: data.average_rating
   }
-  //change budget & revenue from 0 -> unavailable? but then we will have to mess with the conditional rendering
 }
 
 const formatDollars = (raw) => {
