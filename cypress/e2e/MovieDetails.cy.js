@@ -82,7 +82,12 @@ describe('Movie Details Page', () => {
   it('Should contain a Swiper of videos', () => {
     cy.get('.video-slide').should('have.length', 18)
   })
+
+  it('Should redirect to an error page if the user enters an incorrect movie id as a url', () => {
+    cy.visit('/movie/7244bbb')
+    cy.get('.broken-image').should('be.visible')
+    cy.get('h2').contains('Whoops! We couldn\'t find what you\'re looking for')
+  })
   /////////
-  // Error page
   // Loading page
 })
