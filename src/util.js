@@ -13,8 +13,7 @@ const scrubbingBubbles = (data, destination) => {
       })
       .sort((a, b) => a.average_rating - b.average_rating)
   }
-  //import day.js here and format date in cleaner
-  //format genres in cleaner?
+  const formattedGenres = !data.genres ? '' : data.genres.length > 1 ? data.genres.join(' | ') : data.genres
   return {
     id: data.id,
     title: data.title,
@@ -22,7 +21,7 @@ const scrubbingBubbles = (data, destination) => {
     backdrop_path: data.backdrop_path,
     release_date: dayjs(data.release_date).format('MMM D, YYYY'),
     overview: data.overview,
-    genres: data.genres,
+    genres: formattedGenres,
     budget: data.budget || 'unavailable',
     revenue: data.revenue || 'unavailable',
     runtime: data.runtime,
