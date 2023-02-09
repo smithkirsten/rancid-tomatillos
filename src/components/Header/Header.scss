@@ -2,24 +2,25 @@
 
 .Header {
   font-family: $headerFont;
-  background-color: index.$darkGrey;
-  height: 25vh;
+  background-color: $darkGrey;
+  font-size: 36px;
+  height: 21vh;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-}
-h1 {
-  font-family: $headerFont;
-  //why do NONE of the reassignments to headerfont work??? (see Header, see APP, see logo
 }
 
 .logo {
   display: flex;
   align-items: center;
+}
+
+.logo > h1, 
+.tomatillo {
   margin: 10px;
-  font-family: $headerFont;
+  line-height: 60px;
 }
 
 .tomatillo {
-  height: 20vh;
+  height: 15vh;
 }
