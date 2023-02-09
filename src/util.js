@@ -38,7 +38,7 @@ const formatDollars = (raw) => {
   console.log(raw)
   return raw === 'unavailable' ?
     'unavailable for this film':
-    '$' + Intl.NumberFormat().format(raw)
+    ' $' + Intl.NumberFormat().format(raw)
 }
 
 export { scrubbingBubbles, formatDollars }

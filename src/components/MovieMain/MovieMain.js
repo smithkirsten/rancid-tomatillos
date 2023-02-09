@@ -1,6 +1,5 @@
 import './MovieMain.css'
 import { formatDollars } from '../../util'
-import dayjs from 'dayjs'
 import React, { Component } from 'react'
 import Slider from '../Slider/Slider'
 
@@ -19,8 +18,8 @@ const MovieMain = (props) => {
           </div>
         </div>
         <div className="money-matters">
-          <p><strong>Revenue:</strong> {formatDollars(budget)}</p>
-          <p><strong>Budget:</strong> {formatDollars(revenue)}</p>
+          <p className="money">Revenue:{formatDollars(budget)}</p>
+          <p className="money">Budget: {formatDollars(revenue)}</p>
         </div>
       </div>
       {!videos.length ? <div className='no-videos'>No trailers are available for this movie</div> : <Slider videos={videos} />}
@@ -29,7 +28,3 @@ const MovieMain = (props) => {
 }
 
 export default MovieMain
-
-// {revenue !== 0 && (<p><strong>Revenue:</strong> {'$' + Intl.NumberFormat().format(budget)}</p>)}
-// {budget !== 0 && (<p><strong>Budget:</strong> {'$' + Intl.NumberFormat().format(revenue)}</p>)}
-
