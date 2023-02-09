@@ -19,9 +19,8 @@ class App extends Component {
   componentDidMount = async () => {
     const data = await getMovies('movies')
     data.movies ?
-    //call cleaning function here
-
-      this.setState({ movies: data.movies.sort((a, b) => a.average_rating - b.average_rating) }) :
+    //call cleaning function here and pass in data.movies
+      this.setState({ movies: scrubbingBubbles(data.movies) }) :
       this.setState({ error: data.error })
   }
 
