@@ -4,6 +4,7 @@ import MovieMain from '../MovieMain/MovieMain'
 import Error from '../Error/Error'
 import Loading from '../Loading/Loading'
 import { getMovies } from '../../apiCalls'
+import { scrubbingBubbles } from '../../util'
 
 class MovieDetails extends Component {
   constructor(props) {

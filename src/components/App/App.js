@@ -20,7 +20,7 @@ class App extends Component {
     const data = await getMovies('movies')
     data.movies ?
     //call cleaning function here and pass in data.movies
-      this.setState({ movies: scrubbingBubbles(data.movies) }) :
+      this.setState({ movies: scrubbingBubbles(data.movies, 'main') }) :
       this.setState({ error: data.error })
   }
 
