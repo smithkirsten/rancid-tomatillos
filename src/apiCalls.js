@@ -3,8 +3,6 @@
 const getMovies = async(type, id) => {
   let url = 'https://rancid-tomatillos.herokuapp.com/api/v2/movies'
 
-  console.log(url)
-
   if(id) {
     url = `https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}`
   } 

@@ -3,6 +3,7 @@ import MovieDetails from '../MovieDetails/MovieDetails'
 import MainPage from '../MainPage/MainPage'
 import Error from '../Error/Error'
 import { getMovies } from '../../apiCalls'
+import { scrubbingBubbles } from '../../util'
 import './App.css';
 import { Route, Switch, Redirect } from 'react-router-dom';
 
@@ -20,7 +21,8 @@ class App extends Component {
   componentDidMount = async () => {
     const data = await getMovies('movies')
     data.movies ?
-      this.setState({ movies: data.movies.sort((a, b) => a.average_rating - b.average_rating) }) :
+    //call cleaning function here and pass in data.movies
+      this.setState({ movies: scrubbingBubbles(data.movies, 'main') }) :
       this.setState({ error: data.error })
   }
 
@@ -32,6 +34,7 @@ class App extends Component {
 
   findWorstMovies = () => {
     return [this.state.movies.slice(0, 10), this.state.movies.slice(10)]
+
   }
 
   //Not sure if this is the correct way for using the spread operator
