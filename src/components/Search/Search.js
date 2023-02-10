@@ -9,12 +9,16 @@ class Search extends Component {
     }
   }
 
-  handleChange = ({ value }) => {
+  handleChange = (event) => {
     //Use prop object to filter through movies data
+    const { value } = event.target
+    console.log(this.props)
     this.setState({input: value})
+    this.props.handleSearch(this.state.input)
   }
 
   render() {
+    // console.log(this.state.input)
     return(
       <div className='search-container'>
         <label htmlFor="searchBar">Search Bar</label>
