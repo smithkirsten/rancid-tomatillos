@@ -13,6 +13,7 @@ class App extends Component {
       error: '',
       movies: [],
       searchInput: '',
+      searchedMovies: [],
     }
   }
 
@@ -23,24 +24,32 @@ class App extends Component {
       this.setState({ error: data.error })
   }
 
+  componentDidUpdate = () => {
+    if(!this.state.searchInput && this.state.searchedMovies.length) {
+      this.setState({searchedMovies: []})
+    }
+  }
+
   findWorstMovies = () => {
     return [this.state.movies.slice(0, 10), this.state.movies.slice(10)]
   }
 
   //Not sure if this is the correct way for using the spread operator
   handleSearch = input => {
-    console.log(input)
-    this.setState({ searchInput: input, ...this.state })
     const filteredMovies = this.state.movies.filter(movie => movie.title.toLowerCase().includes(input.toLowerCase()))
-    console.log(filteredMovies)
+    this.setState({ searchInput: input, searchedMovies: filteredMovies })
+    // if(!this.state.searchInput) {
+    //   this.setState({searchedMovies: []})
+    // }
   }
 
   render() {
     //do we need exact here now that it's in a switch?
+    console.log('searchInput', this.state.searchInput)
     return (
       <>
         <Switch>
-          <Route exact path='/' render={() => <MainPage movies={this.findWorstMovies()[1]} worstMovies={this.findWorstMovies()[0]} error={this.state.error} handleSearch={this.handleSearch} />} ></Route>
+          <Route exact path='/' render={() => <MainPage movies={this.findWorstMovies()[1]} worstMovies={this.findWorstMovies()[0]} error={this.state.error} handleSearch={this.handleSearch} searchedMovies={this.state.searchedMovies} />} ></Route>
           <Route exact path='/movie/:id' render={(props) => <MovieDetails {...props} allMovies={this.state.movies} />} ></Route>
           <Route path='/error' render={() => <Error error={this.state.error} />} ></Route>
           <Redirect to='/error' />
