@@ -3,9 +3,10 @@ import Error from '../Error/Error'
 import Header from '../Header/Header'
 import Slider from '../Slider/Slider'
 import Loading from '../Loading/Loading'
+import SearchedMovies from '../SearchedMovies/SearchedMovies'
 import './MainPage.css'
 
-const MainPage = ({ movies, worstMovies, error }) => {
+const MainPage = ({ movies, worstMovies, error, handleSearch, searchedMovies }) => {
 
   if (movies.length < 1) {
     return <Loading allMovies={true} />
@@ -17,13 +18,15 @@ const MainPage = ({ movies, worstMovies, error }) => {
 
   return (
     <main className='App'>
-      <Header error={error}/>
+      <Header error={error} handleSearch={handleSearch} />
+      {searchedMovies.length ? <SearchedMovies searchedMovies={searchedMovies} /> :
         <section className="movies-display">
-        <h2>Worst Rated Movie</h2>
-        <Slider movies={worstMovies} scroll={false} />
-        <h2>All Movies</h2>
-        <Slider movies={movies} scroll={true} />
-      </section>
+          <h2>Worst Rated Movie</h2>
+          <Slider movies={worstMovies} scroll={false} />
+          <h2>All Movies</h2>
+          <Slider movies={movies} scroll={true} />
+        </section>
+      }
     </main>
   )
 }

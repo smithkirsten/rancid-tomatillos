@@ -1,4 +1,4 @@
-const movies = {movies: {
+{"movies": {
   "id": 724495,
   "title": "The Woman King",
   "poster_path": "https://image.tmdb.org/t/p/original//438QXt1E3WJWb3PqNniK0tAE5c1.jpg",

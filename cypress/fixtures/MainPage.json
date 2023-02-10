@@ -1,5 +1,5 @@
 {
-  movies: [
+  "movies": [
     {
       "id": 436270,
       "poster_path": "https://image.tmdb.org/t/p/original//pFlaoHTZeyNkG83vxsAJiGzfSsa.jpg",
@@ -87,54 +87,6 @@
       "title": "Terrifier 2",
       "average_rating": 1,
       "release_date": "2022-10-06"
-    },
-    // {
-    //   "id": 985939,
-    //   "poster_path": "https://image.tmdb.org/t/p/original//v28T5F1IygM8vXWZIycfNEm3xcL.jpg",
-    //   "backdrop_path": "https://image.tmdb.org/t/p/original//1DBDwevWS8OhiT3wqqlW7KGPd6m.jpg",
-    //   "title": "Fall",
-    //   "average_rating": 8,
-    //   "release_date": "2022-08-11"
-    // },
-    // {
-    //   "id": 551271,
-    //   "poster_path": "https://image.tmdb.org/t/p/original//4njdAkiBdC5LnFApeXSkFQ78GdT.jpg",
-    //   "backdrop_path": "https://image.tmdb.org/t/p/original//aQOWnw3HydsCQZ10O0wvxFOaWc3.jpg",
-    //   "title": "Medieval",
-    //   "average_rating": 4,
-    //   "release_date": "2022-09-08"
-    // },
-    // {
-    //   "id": 1037858,
-    //   "poster_path": "https://image.tmdb.org/t/p/original//sWoYDNPNZs5MtzPbirXV73tIHrA.jpg",
-    //   "backdrop_path": "https://image.tmdb.org/t/p/original//sqVxhRkPwOo6jogWZjE99V1HRE1.jpg",
-    //   "title": "The Soccer Football Movie",
-    //   "average_rating": 9,
-    //   "release_date": "2022-11-09"
-    // },
-    // {
-    //   "id": 979924,
-    //   "poster_path": "https://image.tmdb.org/t/p/original//a14BbSHvLgzCdbDD6tAL8OBVKL1.jpg",
-    //   "backdrop_path": "https://image.tmdb.org/t/p/original//vTDsdu7RoaMQhvyL6073spQMjQW.jpg",
-    //   "title": "On the Line",
-    //   "average_rating": 10,
-    //   "release_date": "2022-10-31"
-    // },
-    // {
-    //   "id": 49046,
-    //   "poster_path": "https://image.tmdb.org/t/p/original//hYqOjJ7Gh1fbqXrxlIao1g8ZehF.jpg",
-    //   "backdrop_path": "https://image.tmdb.org/t/p/original//mqsPyyeDCBAghXyjbw4TfEYwljw.jpg",
-    //   "title": "All Quiet on the Western Front",
-    //   "average_rating": 8,
-    //   "release_date": "2022-10-07"
-    // },
-    // {
-    //   "id": 899112,
-    //   "poster_path": "https://image.tmdb.org/t/p/original//1CHp8QQjGwqWaPZWjzcRidlt5Xs.jpg",
-    //   "backdrop_path": "https://image.tmdb.org/t/p/original//wZBWrIl6miAmhn8io5qTLSMecNH.jpg",
-    //   "title": "Violent Night",
-    //   "average_rating": 2,
-    //   "release_date": "2022-11-30"
-    // },
+    }
   ]
 }
