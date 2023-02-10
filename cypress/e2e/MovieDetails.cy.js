@@ -61,17 +61,33 @@ describe('Movie Details Page', () => {
     cy.get('.overview-area').contains('The story of the Agojie,')
   })
 
-  it('Should ', () => {
-    cy.get('MovieMain')
+  it('Should hide the main page', () => {
+    cy.get('.movies-display').should('not.exist')
   })
 
-  // Mainpage should NOT be visible 
-  // Revenue & budget
-  // Video Swiper
-  // Button - be visibile
-  // Button - should change url
+  it('Should have a back button', () => {
+    cy.get('.back-to-main-button').should('be.visible')
+  })
 
+  it('Should have a revenue and budget', () => {
+    cy.get('.money-matters').contains('Revenue: $50,000,000')
+    cy.get('.money-matters').contains('Budget: $91,000,000')
+  })
+
+  it('Should take the user back to the main page with the click of the back button', () => {
+    cy.get('.back-to-main-button').click()
+    cy.url().should('eq', 'http://localhost:3000/')
+  })
+  
+  it('Should contain a Swiper of videos', () => {
+    cy.get('.video-slide').should('have.length', 18)
+  })
+
+  it('Should redirect to an error page if the user enters an incorrect movie id as a url', () => {
+    cy.visit('/movie/7244bbb')
+    cy.get('.broken-image').should('be.visible')
+    cy.get('h2').contains('Whoops! We couldn\'t find what you\'re looking for')
+  })
   /////////
-  // Error page
   // Loading page
 })
