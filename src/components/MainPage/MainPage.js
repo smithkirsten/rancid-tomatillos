@@ -6,7 +6,7 @@ import Loading from '../Loading/Loading'
 import SearchedMovies from '../SearchedMovies/SearchedMovies'
 import './MainPage.css'
 
-const MainPage = ({ movies, worstMovies, error, handleSearch, searchedMovies }) => {
+const MainPage = ({ movies, worstMovies, error, handleSearch, searchedMovies, searchInput }) => {
 
   if (movies.length < 1) {
     return <Loading allMovies={true} />
@@ -19,7 +19,7 @@ const MainPage = ({ movies, worstMovies, error, handleSearch, searchedMovies }) 
   return (
     <main className='App'>
       <Header error={error} handleSearch={handleSearch} />
-      {searchedMovies.length ? <SearchedMovies searchedMovies={searchedMovies} /> :
+      { searchInput ? <SearchedMovies searchedMovies={searchedMovies} /> :
         <section className="movies-display">
           <h2>Worst Rated Movie</h2>
           <Slider movies={worstMovies} scroll={false} />
