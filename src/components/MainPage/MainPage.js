@@ -5,7 +5,7 @@ import Slider from '../Slider/Slider'
 import Loading from '../Loading/Loading'
 import './MainPage.css'
 
-const MainPage = ({ movies, worstMovies, error }) => {
+const MainPage = ({ movies, worstMovies, error, handleSearch }) => {
 
   if (movies.length < 1) {
     return <Loading allMovies={true} />
@@ -17,7 +17,7 @@ const MainPage = ({ movies, worstMovies, error }) => {
 
   return (
     <main className='App'>
-      <Header error={error}/>
+      <Header error={error} handleSearch={handleSearch} />
         <section className="movies-display">
         <h2>Worst Rated Movie</h2>
         <Slider movies={worstMovies} scroll={false} />
