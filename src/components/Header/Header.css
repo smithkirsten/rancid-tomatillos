@@ -9,8 +9,11 @@
 }
 
 .logo {
+  color: rgb(255, 255, 240);
+  font-family: "Oswald", sans-serif;
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 
 .logo > h1,
@@ -21,4 +24,8 @@
 
 .tomatillo {
   height: 15vh;
+}
+
+a:link, a:visited, a:hover, a:active {
+  text-decoration: none;
 }/*# sourceMappingURL=Header.css.map */
