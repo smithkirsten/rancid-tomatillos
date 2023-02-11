@@ -21,7 +21,7 @@ class App extends Component {
   componentDidMount = async () => {
     const data = await getMovies('movies')
     data.movies ?
-    //call cleaning function here and pass in data.movies
+      //call cleaning function here and pass in data.movies
       this.setState({ movies: scrubbingBubbles(data.movies, 'main') }) :
       this.setState({ error: data.error })
   }
@@ -29,8 +29,8 @@ class App extends Component {
   componentDidUpdate = () => {
 
     //if there is something in the searchbar, filter the ideas here
-      //then if there isn't something in the search bar, it will conditionallty
-  
+    //then if there isn't something in the search bar, it will conditionallty
+
     // if(!this.state.searchInput && this.state.searchedMovies.length) {
     //   this.setState({searchedMovies: []})
     // }
@@ -52,7 +52,6 @@ class App extends Component {
 
   render() {
     //do we need exact here now that it's in a switch?
-    console.log('searchInput', this.state.searchInput)
     return (
       <>
         <Switch>
