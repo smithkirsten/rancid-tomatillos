@@ -27,9 +27,13 @@ class App extends Component {
   }
 
   componentDidUpdate = () => {
-    if(!this.state.searchInput && this.state.searchedMovies.length) {
-      this.setState({searchedMovies: []})
-    }
+
+    //if there is something in the searchbar, filter the ideas here
+      //then if there isn't something in the search bar, it will conditionallty
+  
+    // if(!this.state.searchInput && this.state.searchedMovies.length) {
+    //   this.setState({searchedMovies: []})
+    // }
   }
 
   findWorstMovies = () => {
@@ -52,7 +56,7 @@ class App extends Component {
     return (
       <>
         <Switch>
-          <Route exact path='/' render={() => <MainPage movies={this.findWorstMovies()[1]} worstMovies={this.findWorstMovies()[0]} error={this.state.error} handleSearch={this.handleSearch} searchedMovies={this.state.searchedMovies} />} ></Route>
+          <Route exact path='/' render={() => <MainPage movies={this.findWorstMovies()[1]} worstMovies={this.findWorstMovies()[0]} error={this.state.error} handleSearch={this.handleSearch} searchedMovies={this.state.searchedMovies} searchInput={this.state.searchInput} />} ></Route>
           <Route exact path='/movie/:id' render={(props) => <MovieDetails {...props} allMovies={this.state.movies} />} ></Route>
           <Route path='/error' render={() => <Error error={this.state.error} />} ></Route>
           <Redirect to='/error' />
