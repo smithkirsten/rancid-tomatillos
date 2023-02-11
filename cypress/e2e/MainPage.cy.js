@@ -28,6 +28,10 @@ describe('Main Page', () => {
     cy.get('.slide').should('have.length', 11)
   })
 
+  it('Should contain slides of movie posters', () => {
+    
+  })
+
   it('Should have two Swiper slides', () => {
     cy.get('.poster-swiper').should('have.length', 2)
   })
