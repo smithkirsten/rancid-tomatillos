@@ -21,38 +21,20 @@ class App extends Component {
   componentDidMount = async () => {
     const data = await getMovies('movies')
     data.movies ?
-    //call cleaning function here and pass in data.movies
       this.setState({ movies: scrubbingBubbles(data.movies, 'main') }) :
       this.setState({ error: data.error })
   }
 
-  componentDidUpdate = () => {
-
-    //if there is something in the searchbar, filter the ideas here
-      //then if there isn't something in the search bar, it will conditionallty
-  
-    // if(!this.state.searchInput && this.state.searchedMovies.length) {
-    //   this.setState({searchedMovies: []})
-    // }
-  }
-
   findWorstMovies = () => {
     return [this.state.movies.slice(0, 10), this.state.movies.slice(10)]
-
   }
 
-  //Not sure if this is the correct way for using the spread operator
   handleSearch = input => {
     const filteredMovies = this.state.movies.filter(movie => movie.title.toLowerCase().includes(input.toLowerCase()))
     this.setState({ searchInput: input, searchedMovies: filteredMovies })
-    // if(!this.state.searchInput) {
-    //   this.setState({searchedMovies: []})
-    // }
   }
 
   render() {
-    //do we need exact here now that it's in a switch?
-    console.log('searchInput', this.state.searchInput)
     return (
       <>
         <Switch>

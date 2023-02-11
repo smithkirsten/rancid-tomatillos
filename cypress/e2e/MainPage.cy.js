@@ -4,9 +4,11 @@ describe('Main Page', () => {
     cy.visit('/')
   })
 
-  // it('Should see a loading page when waiting for main page to load', () => { 
-  //   cy.contains('loading')
-  // }) 
+  it('Should see a loading page when waiting for main page to load', () => { 
+    cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies', {fixture: {movies: []} })
+    cy.visit('/')
+    cy.get('loading-card').should('have.length', 11)
+  }) 
 
   it('Should see the title of the application', () => {
     cy.get('.App').contains('Rancid Tomatillos')
@@ -26,6 +28,12 @@ describe('Main Page', () => {
 
   it('Should see a collection of movies', () => {
     cy.get('.slide').should('have.length', 11)
+  })
+
+  it('Should contain slides of movie posters', () => {
+    cy.get('#436270').should('be.visible')
+    cy.get('#934641').should('be.visible')
+    cy.get('#663712').should('be.visible')
   })
 
   it('Should have two Swiper slides', () => {

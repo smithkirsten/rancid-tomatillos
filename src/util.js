@@ -1,18 +1,6 @@
 import dayjs from 'dayjs'
 
-const scrubbingBubbles = (data, destination) => {
-  if(destination === 'main') {
-    return data
-      .map(movie => {
-        return {
-          id: movie.id,
-          poster_path: movie.poster_path,
-          title: movie.title,
-          average_rating: movie.average_rating
-        }
-      })
-      .sort((a, b) => a.average_rating - b.average_rating)
-  }
+const cleanMovie = (data) => {
   const formattedGenres = !data.genres ? '' : data.genres.length > 1 ? data.genres.join(' | ') : data.genres
   const movieHours = data.runtime / 60
   const movieMinutes = (movieHours - Math.floor(movieHours)) * 60
@@ -34,8 +22,24 @@ const scrubbingBubbles = (data, destination) => {
   }
 }
 
+const scrubbingBubbles = (data, destination) => {
+  if(destination === 'main') {
+    return data
+      .map(movie => {
+        return {
+          id: movie.id,
+          poster_path: movie.poster_path,
+          title: movie.title,
+          average_rating: movie.average_rating
+        }
+      })
+      .sort((a, b) => a.average_rating - b.average_rating)
+  }
+  return cleanMovie(data)
+  
+}
+
 const formatDollars = (raw) => {
-  console.log(raw)
   return raw === 'unavailable' ?
     'unavailable for this film':
     ' $' + Intl.NumberFormat().format(raw)
