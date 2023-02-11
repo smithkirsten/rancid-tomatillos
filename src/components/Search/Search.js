@@ -10,10 +10,8 @@ class Search extends Component {
   }
 
   handleChange = (event) => {
-    //Use prop object to filter through movies data
     const { value } = event.target
-    this.setState({input: value})
-    this.props.handleSearch(this.state.input)
+    this.setState({input: value}, () => this.props.handleSearch(this.state.input))
   }
 
   render() {

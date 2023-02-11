@@ -1,10 +1,11 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+import './SearchedMovies.css'
 
 const SearchedMovies = ({ searchedMovies }) => {
-  const filteredMovies = searchedMovies.map(movie => <div style={{backgroundImage: movie.poster_path}} className='.filtered-movies'>{movie.title}</div>)
-  console.log(filteredMovies)
+  const filteredMovies = searchedMovies.map(movie => <Link to={"/movie/" + movie.id} ><img className='filtered-movies' src={movie.poster_path} alt={movie.title} /></Link>)
   return (
-    <section>
+    <section className='filtered-movies-section'>
       {filteredMovies}
     </section>
   )
