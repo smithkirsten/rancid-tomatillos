@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import spinner from '../../assets/Spinner.gif'
 import Header from '../Header/Header'
 import Slider from '../Slider/Slider'
