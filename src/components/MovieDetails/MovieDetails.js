@@ -21,20 +21,20 @@ class MovieDetails extends Component {
       const videos = await getMovies('videos', id)
       this.setState({ movie: scrubbingBubbles(movieDeets.movie, 'details'), videos: videos.videos })
     }
-  
-  componentDidMount = async() => {
-    const id = this.props.match.params.id
-    await this.displayMovie(id)
-  }
-
-  render() {
-    if(this.state.movies < 1) {
-      return <Loading error='loading' />
+    
+    componentDidMount = async() => {
+      const id = this.props.match.params.id
+      await this.displayMovie(id)
     }
-
-    if(!this.props.allMovies.find(movie => movie.id === +this.props.match.params.id)) {
-      return (<Error error='no such movie id' />)
-    }
+    
+    render() {
+      if(!this.props.allMovies.find(movie => movie.id === +this.props.match.params.id)) {
+        return (<Error error='no such movie id' />)
+      }
+      
+      if(!this.state.movie.title) {
+        return <Loading error='loading' />
+      }
 
     return (
       <main className="App">

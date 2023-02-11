@@ -19,7 +19,7 @@ const MainPage = ({ movies, worstMovies, error, handleSearch, searchedMovies, se
   return (
     <main className='App'>
       <Header error={error} handleSearch={handleSearch} />
-      { searchInput ? <SearchedMovies searchedMovies={searchedMovies} /> :
+      { searchInput ? <SearchedMovies searchInput={searchInput} searchedMovies={searchedMovies} /> :
         <section className="movies-display">
           <h2>Worst Rated Movie</h2>
           <Slider movies={worstMovies} scroll={false} />
