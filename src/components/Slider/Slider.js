@@ -8,7 +8,6 @@ import 'swiper/scss/autoplay'
 import { Autoplay, Navigation, A11y, Keyboard } from 'swiper'
 import { Link } from 'react-router-dom'
 
-//og width: 560 height: 315
 const buildVideoSlides = (videos) => {
   return videos.map(video => {
     const src = `https://www.youtube.com/embed/${video.key}`
