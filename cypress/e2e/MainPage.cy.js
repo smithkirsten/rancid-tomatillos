@@ -22,9 +22,14 @@ describe('Main Page', () => {
     cy.get('#searchBar').should('be.visible')
   })
   
-  // it('Should be able to search for movies', () => {
-      // cy.get('#searchBar').type('The woman King').click().url('/movie/724495')
-  // })
+  it('Should be able to search for movies', () => {
+    cy.get('#searchBar').type('The woman King').click().url('/movie/724495')
+  })
+
+  it('Should display a message if movie title wasn\'t found', () => {
+    cy.get('#searchBar').type('the wooman')
+    cy.get('.no-movies').contains('No movie titles found matching "the wooman"')
+  })
 
   it('Should see a collection of movies', () => {
     cy.get('.slide').should('have.length', 11)
