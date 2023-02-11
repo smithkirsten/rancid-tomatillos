@@ -1,12 +1,14 @@
 describe('Main Page', () => {
+  it('Should show a loading page before the main page loads', () => {
+    cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies', { fixture: 'emptyMainPage.json' })
+    cy.visit('/')
+    cy.get('.loading-card').should('have.length', 44)
+  })
+
   beforeEach(() => {
     cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies', { fixture: 'MainPage.json' })
     cy.visit('/')
   })
-
-  // it('Should see a loading page when waiting for main page to load', () => { 
-  //   cy.contains('loading')
-  // }) 
 
   it('Should see the title of the application', () => {
     cy.get('.App').contains('Rancid Tomatillos')
