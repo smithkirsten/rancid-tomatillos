@@ -1,16 +1,19 @@
 describe('Movie Details Page', () => {
+  it('Should display loading page while waiting for MovieDetails page to load', () => {
+    cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies/724495', 
+    { fixture: 'emptyMovieDetails.json' })
+    cy.visit('/movie/724495')
+    cy.get('[alt=loading]').should('be.visible')
+  })
+
   beforeEach(() => {
     cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies/724495', 
     { fixture: 'MovieDetails.json' })
     cy.visit('/movie/724495')
   })
-  
-  // it('Should see a loading page when waiting for movie details page to load', () => { 
-    //   cy.contains('loading')
-    // }) 
     
-    it('Should display backdrop photo', () => {
-    // cy.get('.movie-header').should('have.css', 'background-image')
+  it('Should display backdrop photo', () => {
+    cy.get('.movie-header').should('have.css', 'background-image')
   })
 
   it('Should display movie title', () => {
@@ -72,6 +75,4 @@ describe('Movie Details Page', () => {
     cy.get('.broken-image').should('be.visible')
     cy.get('h2').contains('Whoops! We couldn\'t find what you\'re looking for')
   })
-  /////////
-  // Loading page
 })
