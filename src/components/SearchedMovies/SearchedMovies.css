@@ -1,0 +1,11 @@
+.filtered-movies-section {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto;
+}
+
+.filtered-movies {
+  height: 28vh;
+  width: 22vh;
+  margin: 30px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+}/*# sourceMappingURL=SearchedMovies.css.map */
