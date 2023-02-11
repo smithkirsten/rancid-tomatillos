@@ -1,6 +1,6 @@
 import './MovieMain.css'
 import { formatDollars } from '../../util'
-import React, { Component } from 'react'
+import React from 'react'
 import Slider from '../Slider/Slider'
 
 const MovieMain = (props) => {
