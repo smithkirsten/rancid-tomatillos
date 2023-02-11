@@ -21,10 +21,6 @@ describe('Main Page', () => {
   it('Should have a search bar for movies', () => {
     cy.get('#searchBar').should('be.visible')
   })
-  
-  // it('Should be able to search for movies', () => {
-      // cy.get('#searchBar').type('The woman King').click().url('/movie/724495')
-  // })
 
   it('Should see a collection of movies', () => {
     cy.get('.slide').should('have.length', 11)
