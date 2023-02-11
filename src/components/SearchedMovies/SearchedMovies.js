@@ -6,7 +6,7 @@ const SearchedMovies = ({ searchedMovies, searchInput }) => {
   const filteredMovies = searchedMovies.map(movie => <Link to={"/movie/" + movie.id} ><img className='filtered-movies' src={movie.poster_path} key={movie.id} alt={movie.title} /></Link>)
   console.log(filteredMovies)
   return (
-    filteredMovies.length ? <section className='filtered-movies-section'>{filteredMovies}</section> : <h2 className='no-movies'>No movies found with "<span className='input'>{searchInput}</span>"</h2>
+    filteredMovies.length ? <section className='filtered-movies-section'>{filteredMovies}</section> : <h2 className='no-movies'>No movie titles found matching "<span className='input'>{searchInput}</span>"</h2>
   )
 }
 
