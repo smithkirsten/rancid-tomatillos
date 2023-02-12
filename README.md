@@ -1,6 +1,9 @@
 <div align="center">
 
+   ![black-toma](https://user-images.githubusercontent.com/113261334/218286979-b64b6f57-da43-4afa-a09f-033143cb11ed.png)
+  
 # Rancid Tomatillos
+  
 
 </div>
 
@@ -33,7 +36,8 @@
 ## Abstract:
 
 [//]: <> (Briefly describe what you built and its features. What problem is the app solving? How does this application solve that problem?)
-
+Rancid Tomatillos is an application built on React that allows a user to browse though a movie collection. Users can search for their favorite movie or use the slider to view movie posters horizontally. Users can select movies of their choosing and be directed to that movie's details page that displays revenue, budget, runtime, release date, overview, genres, and trailers if available. With the use of React Router to define paths to each page within the application, users are able to use the back button on your browser to go back through their history.   
+  
 </div>
 
 ---
@@ -65,6 +69,10 @@
 ## Preview of App:
 
 [//]: <> (Provide ONE gif or screenshot of your application - choose the "coolest" piece of functionality to show off.)
+  
+  ![rancid-tomatillos](https://user-images.githubusercontent.com/113261334/218286750-6a045ae8-8606-49f7-8008-171d0fb7fb68.gif)
+
+  
 
 ---
 
