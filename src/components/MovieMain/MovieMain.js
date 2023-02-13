@@ -2,6 +2,7 @@ import './MovieMain.css'
 import { formatDollars } from '../../util'
 import React from 'react'
 import Slider from '../Slider/Slider'
+import PropTypes from 'prop-types'
 
 const MovieMain = (props) => {
   const { title, tagline, release_date, poster_path, overview, budget, revenue } = props.movie
@@ -28,3 +29,11 @@ const MovieMain = (props) => {
 }
 
 export default MovieMain
+
+
+//Should we test title, tagline, release_date, poster_path, overview, budget, revenue also?
+
+MovieMain.propTypes = {
+  movie: PropTypes.object,
+  videos: PropTypes.array,
+}

@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import './SearchedMovies.css'
+import PropTypes from 'prop-types'
 
 const SearchedMovies = ({ searchedMovies, searchInput }) => {
   const filteredMovies = searchedMovies.map(movie => <Link to={"/movie/" + movie.id} ><img className='filtered-movies' src={movie.poster_path} key={movie.id} alt={movie.title} /></Link>)
@@ -11,3 +12,8 @@ const SearchedMovies = ({ searchedMovies, searchInput }) => {
 }
 
 export default SearchedMovies
+
+SearchedMovies.propTypes = {
+  searchedMovies: PropTypes.array,
+  searchedInput: PropTypes.string,
+}

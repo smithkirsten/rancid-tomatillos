@@ -3,6 +3,7 @@ import Search from "../Search/Search";
 import { Link } from 'react-router-dom'
 import './Header.css'
 import tomatillo from "../../assets/cream-toma.png"
+import PropTypes from 'prop-types'
 
 
 const Header = ({ error, handleSearch }) => {
@@ -18,3 +19,8 @@ const Header = ({ error, handleSearch }) => {
 }
 
 export default Header
+
+Header.propTypes = {
+  error: PropTypes.string,
+  handleSearch: PropTypes.func
+}

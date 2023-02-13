@@ -5,6 +5,7 @@ import Error from '../Error/Error'
 import Loading from '../Loading/Loading'
 import { getMovies } from '../../apiCalls'
 import { scrubbingBubbles } from '../../util'
+import PropTypes from 'prop-types'
 
 class MovieDetails extends Component {
   constructor(props) {
@@ -49,3 +50,8 @@ class MovieDetails extends Component {
 }
 
 export default MovieDetails
+
+MovieDetails.propTypes = {
+  allMovies: PropTypes.array
+  // Should we test this.props.match.params?
+}

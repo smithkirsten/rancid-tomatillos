@@ -1,6 +1,7 @@
 import './MovieHeader.css'
 import React from 'react'
 import { Link } from 'react-router-dom'
+import PropTypes from 'prop-types'
 
 const MovieHeader = (props) => {
   const { title, backdrop_path, average_rating, runtime, genres } = props.movie
@@ -23,3 +24,7 @@ const MovieHeader = (props) => {
 }
 
 export default MovieHeader
+
+MovieHeader.propTypes = {
+  movie: PropTypes.object,
+}
