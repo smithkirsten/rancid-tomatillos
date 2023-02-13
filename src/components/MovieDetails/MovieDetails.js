@@ -52,6 +52,6 @@ class MovieDetails extends Component {
 export default MovieDetails
 
 MovieDetails.propTypes = {
-  allMovies: PropTypes.array
-  // Should we test this.props.match.params?
+  allMovies: PropTypes.arrayOf(PropTypes.object),
+  match: PropTypes.object
 }
