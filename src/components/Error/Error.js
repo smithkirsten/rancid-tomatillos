@@ -2,9 +2,9 @@ import React from 'react'
 import './Error.css'
 import Header from '../Header/Header'
 import broken from '../../assets/movie.png'
+import PropTypes from 'prop-types'
 
 const Error = ({ error }) => {
-  console.log(error)
   return (
     <main className="App">
       <Header error={error} />
@@ -19,3 +19,7 @@ const Error = ({ error }) => {
 }
 
 export default Error
+
+Error.propTypes = {
+  error: PropTypes.string
+}
