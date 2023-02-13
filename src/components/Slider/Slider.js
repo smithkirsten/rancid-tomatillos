@@ -1,12 +1,13 @@
 import React from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
-// import 'swiper/scss/bundle' <- not working
+// import 'swiper/scss/bundle'
 import './Slider.css'
 import 'swiper/scss'
 import 'swiper/scss/navigation'
 import 'swiper/scss/autoplay'
 import { Autoplay, Navigation, A11y, Keyboard } from 'swiper'
 import { Link } from 'react-router-dom'
+import PropTypes from 'prop-types'
 
 const buildVideoSlides = (videos) => {
   return videos.map(video => {
@@ -91,3 +92,11 @@ const Slider = (props) => {
 }
 
 export default Slider
+
+// Noticed that scroll isn't being destructured, but when I tried to destructure it, the app broke. Not sure if it's okay to propType scroll like this.
+
+Slider.propTypes = {
+  videos: PropTypes.array,
+  // movies: PropTypes.array,  // Should we have to check movies if it's not a pass being props into "Slider" specifically??
+  scroll: PropTypes.bool
+}
