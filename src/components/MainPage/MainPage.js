@@ -5,6 +5,7 @@ import Slider from '../Slider/Slider'
 import Loading from '../Loading/Loading'
 import SearchedMovies from '../SearchedMovies/SearchedMovies'
 import './MainPage.css'
+import PropTypes from 'prop-types'
 
 const MainPage = ({ movies, worstMovies, error, handleSearch, searchedMovies, searchInput }) => {
 
@@ -32,3 +33,12 @@ const MainPage = ({ movies, worstMovies, error, handleSearch, searchedMovies, se
 }
 
 export default MainPage
+
+MainPage.propTypes ={ //movies, worstMovies, error, handleSearch, searchedMovies, searchInput
+  movies: PropTypes.array,
+  worstMovies: PropTypes.array,
+  error: PropTypes.string,
+  handleSearch: PropTypes.func,
+  searchedMovies: PropTypes.array,
+  searchedInput: PropTypes.string,
+}
