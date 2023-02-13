@@ -2,6 +2,7 @@ import React from 'react'
 import spinner from '../../assets/Spinner.gif'
 import Header from '../Header/Header'
 import Slider from '../Slider/Slider'
+import PropTypes from 'prop-types'
 
 const Loading = ({ allMovies }) => {
   if (allMovies) {
@@ -26,3 +27,7 @@ const Loading = ({ allMovies }) => {
 }
 
 export default Loading
+
+Loading.propTypes = {
+  allMovies: PropTypes.array
+}
