@@ -96,7 +96,7 @@ export default Slider
 // Noticed that scroll isn't being destructured, but when I tried to destructure it, the app broke. Not sure if it's okay to propType scroll like this.
 
 Slider.propTypes = {
-  videos: PropTypes.array,
-  // movies: PropTypes.array,  // Should we have to check movies if it's not a pass being props into "Slider" specifically??
+  videos: PropTypes.arrayOf(PropTypes.object),
+  movies: PropTypes.arrayOf(PropTypes.object),  // Should we have to check movies if it's not a pass being props into "Slider" specifically??
   scroll: PropTypes.bool
 }

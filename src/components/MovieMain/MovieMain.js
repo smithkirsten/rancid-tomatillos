@@ -35,5 +35,5 @@ export default MovieMain
 
 MovieMain.propTypes = {
   movie: PropTypes.object,
-  videos: PropTypes.array,
+  videos: PropTypes.arrayOf(PropTypes.object),
 }
