@@ -29,5 +29,5 @@ const Loading = ({ allMovies }) => {
 export default Loading
 
 Loading.propTypes = {
-  allMovies: PropTypes.array
+  allMovies: PropTypes.bool
 }
