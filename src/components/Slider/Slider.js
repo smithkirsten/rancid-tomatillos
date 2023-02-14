@@ -1,6 +1,5 @@
 import React from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
-// import 'swiper/scss/bundle'
 import './Slider.css'
 import 'swiper/scss'
 import 'swiper/scss/navigation'
@@ -13,17 +12,17 @@ const buildVideoSlides = (videos) => {
   return videos.map(video => {
     const src = `https://www.youtube.com/embed/${video.key}`
     return (
-    <SwiperSlide className="video-slide" key={video.id}>
-      <iframe 
-        width="560" 
-        height="315" 
-        src={src} 
-        title="YouTube video player" 
-        frameBorder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-        allowFullScreen>
-      </iframe>
-    </SwiperSlide>
+      <SwiperSlide className="video-slide" key={video.id}>
+        <iframe
+          width="560"
+          height="315"
+          src={src}
+          title="YouTube video player"
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowFullScreen>
+        </iframe>
+      </SwiperSlide>
     )
   })
 }
@@ -42,19 +41,19 @@ const buildMovieSlides = (movies) => {
   return movies.map(movie => {
     const aria = `Click to view details for ${movie.title}`
     return (
-        <SwiperSlide className="slide" id={movie.id} key={movie.id}><Link to={"/movie/" + movie.id} ><img className='poster-image' aria-label={aria} src={movie.poster_path} alt={movie.title} /></Link></SwiperSlide>
+      <SwiperSlide className="slide" id={movie.id} key={movie.id}><Link to={"/movie/" + movie.id} ><img className='poster-image' aria-label={aria} src={movie.poster_path} alt={movie.title} /></Link></SwiperSlide>
     )
-  }) 
+  })
 }
 
 const buildABear = ({ movies, videos }) => {
-  if(videos) {
+  if (videos) {
     return buildVideoSlides(videos)
   }
 
-  if(movies) {
+  if (movies) {
     return buildMovieSlides(movies)
-    
+
   } else {
     return buildDummySlides()
   }
@@ -84,7 +83,7 @@ const Slider = (props) => {
         a11y={ally}
         rewind={true}
         keyboard={true}
-        >
+      >
         {slides}
       </Swiper>
     </div>
@@ -93,10 +92,8 @@ const Slider = (props) => {
 
 export default Slider
 
-// Noticed that scroll isn't being destructured, but when I tried to destructure it, the app broke. Not sure if it's okay to propType scroll like this.
-
 Slider.propTypes = {
   videos: PropTypes.arrayOf(PropTypes.object),
-  movies: PropTypes.arrayOf(PropTypes.object),  // Should we have to check movies if it's not a pass being props into "Slider" specifically??
+  movies: PropTypes.arrayOf(PropTypes.object),
   scroll: PropTypes.bool
 }

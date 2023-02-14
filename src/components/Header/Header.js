@@ -5,13 +5,12 @@ import './Header.css'
 import tomatillo from "../../assets/cream-toma.png"
 import PropTypes from 'prop-types'
 
-
 const Header = ({ error, handleSearch }) => {
   return (
     <nav className="Header">
       <Link to='/'><div className="logo">
-        <img src={tomatillo} alt='Tomatillo Logo' className="tomatillo"/>
-        <h1 className="title">Rancid <br/> Tomatillos</h1>
+        <img src={tomatillo} alt='Tomatillo Logo' className="tomatillo" />
+        <h1 className="title">Rancid <br /> Tomatillos</h1>
       </div></Link>
       {!error && <Search handleSearch={handleSearch} />}
     </nav>

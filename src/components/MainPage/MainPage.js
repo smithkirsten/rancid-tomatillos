@@ -20,7 +20,7 @@ const MainPage = ({ movies, worstMovies, error, handleSearch, searchedMovies, se
   return (
     <main className='App'>
       <Header error={error} handleSearch={handleSearch} />
-      { searchInput ? <SearchedMovies searchInput={searchInput} searchedMovies={searchedMovies} /> :
+      {searchInput ? <SearchedMovies searchInput={searchInput} searchedMovies={searchedMovies} /> :
         <section className="movies-display">
           <h2>Worst Rated Movie</h2>
           <Slider movies={worstMovies} scroll={false} />
@@ -34,7 +34,7 @@ const MainPage = ({ movies, worstMovies, error, handleSearch, searchedMovies, se
 
 export default MainPage
 
-MainPage.propTypes ={ //movies, worstMovies, error, handleSearch, searchedMovies, searchInput
+MainPage.propTypes = {
   movies: PropTypes.arrayOf(PropTypes.object),
   worstMovies: PropTypes.arrayOf(PropTypes.object),
   error: PropTypes.string,

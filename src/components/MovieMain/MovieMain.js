@@ -30,9 +30,6 @@ const MovieMain = (props) => {
 
 export default MovieMain
 
-
-//Should we test title, tagline, release_date, poster_path, overview, budget, revenue also?
-
 MovieMain.propTypes = {
   movie: PropTypes.object,
   videos: PropTypes.arrayOf(PropTypes.object),
