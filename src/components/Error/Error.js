@@ -11,7 +11,7 @@ const Error = ({ error }) => {
       <section className="error-page">
         <div className="error-display">
           <h2>Whoops! We couldn't find what you're looking for</h2>
-          <img src={broken} alt='broken movie reel' className="broken-image"/>
+          <img src={broken} alt='broken movie reel' className="broken-image" />
         </div>
       </section>
     </main>
